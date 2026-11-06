@@ -4,6 +4,9 @@ A complete, runnable copy of the Red Panda Bicycles demo for solutions engineers
 
 You end with your own Red Panda site live on Contentstack Launch, a seeded Lytics account, a personalized homepage hero for the demo persona, and Claude connected to your data for the live Q&A part of the demo.
 
+> [!IMPORTANT]
+> **The Canoe part of the original demo was faked.** Red Panda Bicycles is a fictional company, so it has no GEO/AEO presence for Canoe to measure. The original demo showed Canoe with custom text placed over it in the browser, on the client side only. That overlay isn't in this kit, and Canoe won't show Red Panda in your account. Tell that part of the story instead, or show Canoe on a real brand.
+
 ## Quick start
 
 Give Claude Code this repo's link and say:

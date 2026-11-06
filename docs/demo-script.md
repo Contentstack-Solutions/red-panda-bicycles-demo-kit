@@ -37,7 +37,7 @@ For a solutions engineer showing Red Panda Bicycles to a prospect. The demo open
 - **Say:** "Buyers don't start on our website any more. They ask an AI assistant which e-bike to buy."
 - **Say:** "Ask one for the best e-bike for commuting and our competitors come up. We're left out, because the Volt's range is short."
 - **Say:** "So the Roam's story writes itself: range and reliability. The question is who to tell first."
-- **Optional:** if you can show Canoe, Contentstack's AI visibility tool, run the prompt "best e-bikes for commuting" there instead of telling it.
+- **Tell this part; don't show it.** Red Panda is fictional, so Canoe, Contentstack's AI visibility tool, has nothing to measure for it (see the note in the [README](../README.md)). To show Canoe, use a real brand.
 
 ## Act 1: find the audience with Claude
 
