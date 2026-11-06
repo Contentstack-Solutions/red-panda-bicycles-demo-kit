@@ -1,0 +1,16 @@
+{
+  "entry": {
+    "title": "Westergas",
+    "blurb": "Old gasworks turned park, with cafés and weekend markets.",
+    "latitude": 52.3862,
+    "longitude": 4.8756,
+    "locale": "en",
+    "uid": "blt0943db648fb27b7b",
+    "tags": []
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "entry": {
+    "title": "More Miles. Happier Days",
+    "image": null,
+    "eyebrow_text": "SAME SPIRIT. A BRIGHTER TOMORROW",
+    "headline": "More Miles. Happier \nDays",
+    "description": "Our new generation of e-bikes are built \nfor longer rides, bigger adventures, and\na cleaner, brighter future.",
+    "button_text": "Exlore E-Bikes ",
+    "page": [
+      {
+        "uid": "bltd721b60dbddc0406",
+        "_content_type_uid": "page"
+      }
+    ],
+    "tags": [],
+    "locale": "en",
+    "uid": "bltaef8fc63b4171f82",
+    "trust_strip": {
+      "items": [
+        {
+          "image": {
+            "uid": "am678156eb915ec41f",
+            "filename": "longer-range-battery-icon.png",
+            "title": "longer-range-battery-icon.png"
+          },
+          "_metadata": {
+            "uid": "cs9653f161e42c7a0f"
+          },
+          "title": "Longer Range",
+          "description": "Go further"
+        },
+        {
+          "image": {
+            "uid": "amff9ae63d9d38c297",
+            "filename": "more-adventures-map-icon.png",
+            "title": "more-adventures-map-icon.png"
+          },
+          "_metadata": {
+            "uid": "csb9cf792d7c22b2a8"
+          },
+          "title": "More Adventures",
+          "description": "Near or far"
+        }
+      ]
+    }
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "uid": "amf2009e42aa838ffd",
+    "name": "Blog",
+    "parent_uid": null
+  },
+  {
+    "uid": "amfac5b846632b3527",
+    "name": "Banners",
+    "parent_uid": null
+  },
+  {
+    "uid": "amfa202d3e6e37941b",
+    "name": "Icons",
+    "parent_uid": null
+  },
+  {
+    "uid": "am61e6f2a9a21e5152",
+    "name": "Products",
+    "parent_uid": null
+  },
+  {
+    "uid": "ame4938ee4c1704765",
+    "name": "Heroes",
+    "parent_uid": null
+  },
+  {
+    "uid": "ama50da9c61b57056b",
+    "name": "Logos",
+    "parent_uid": null
+  }
+]

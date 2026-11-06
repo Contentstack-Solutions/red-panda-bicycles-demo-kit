@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f4f2ee;
+  --color-cream-dark: #efe7d6;
+  --color-blue-gray: #dfe8ea;
+  --color-ink: #1c2b3d;
+  --color-ink-light: #2c333d;
+  --color-accent: #d9472c;
+  --color-accent-dark: #b83a23;
+
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-work-sans), system-ui, sans-serif;
+}
+
+@keyframes badge-wiggle {
+  0%, 100% { transform: rotate(12deg) scale(1); }
+  25% { transform: rotate(4deg) scale(1.08); }
+  50% { transform: rotate(16deg) scale(1.04); }
+  75% { transform: rotate(9deg) scale(1.06); }
+}
+
+.badge-sticker {
+  transform: rotate(12deg);
+  transition: transform 200ms ease;
+}
+
+.group:hover .badge-sticker {
+  animation: badge-wiggle 600ms ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .group:hover .badge-sticker {
+    animation: none;
+  }
+}
+
+/* Trip planner map */
+.trip-map {
+  isolation: isolate; /* keep Leaflet's z-indexed panes under the site header */
+  font-family: var(--font-sans);
+}
+
+.trip-map .leaflet-control-attribution {
+  background: rgb(244 242 238 / 0.85);
+  font-size: 10px;
+}
+
+.trip-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--color-cream);
+  border-radius: 9999px;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  font: 600 12px/1 var(--font-sans);
+  box-shadow: 0 2px 4px rgb(28 43 61 / 0.3);
+  transition: transform 150ms ease, background-color 150ms ease;
+}
+
+.trip-pin--selected {
+  background: var(--color-accent);
+  transform: scale(1.15);
+}
+
+.trip-origin {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #fff;
+  border-radius: 9999px;
+  background: var(--color-accent);
+  animation: trip-pulse 2s ease-out infinite;
+}
+
+@keyframes trip-pulse {
+  0% { box-shadow: 0 0 0 0 rgb(217 71 44 / 0.45); }
+  70% { box-shadow: 0 0 0 14px rgb(217 71 44 / 0); }
+  100% { box-shadow: 0 0 0 0 rgb(217 71 44 / 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trip-origin {
+    animation: none;
+  }
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  letter-spacing: -0.011em;
+}
+
+/* Scrolls via mouse wheel/touch/keyboard as normal, just without a visible track. */
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* old Edge */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* Journal article body (HTML rendered from Contentstack rich text) */
+.article-body {
+  color: var(--color-ink-light);
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.article-body > * + * {
+  margin-top: 1.25em;
+}
+
+.article-body h2,
+.article-body h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.article-body h2 {
+  margin-top: 2.25em;
+  font-size: 1.875rem;
+  line-height: 1.2;
+}
+
+.article-body h3 {
+  margin-top: 2em;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.article-body h2 + *,
+.article-body h3 + * {
+  margin-top: 0.6em;
+}
+
+.article-body strong {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.article-body a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 150ms ease;
+}
+
+.article-body a:hover {
+  color: var(--color-accent);
+}
+
+.article-body ul {
+  list-style: disc;
+  padding-left: 1.25em;
+}
+
+.article-body ol {
+  list-style: decimal;
+  padding-left: 1.5em;
+}
+
+.article-body li + li {
+  margin-top: 0.4em;
+}
+
+.article-body li::marker {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.article-body blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1.25em;
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-ink);
+}

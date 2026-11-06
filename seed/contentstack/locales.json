@@ -1,0 +1,12 @@
+[
+  {
+    "code": "nl",
+    "name": "Dutch",
+    "fallback_locale": "en"
+  },
+  {
+    "code": "en",
+    "name": "English",
+    "fallback_locale": null
+  }
+]

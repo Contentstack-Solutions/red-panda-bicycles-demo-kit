@@ -1,0 +1,87 @@
+{
+  "global_field": {
+    "uid": "newsletter_signup",
+    "title": "Newsletter Signup",
+    "schema": [
+      {
+        "data_type": "text",
+        "display_name": "Title",
+        "uid": "title",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Placeholder",
+        "uid": "placeholder",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Button Text",
+        "uid": "button_text",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Background Color",
+        "display_type": "dropdown",
+        "enum": {
+          "advanced": false,
+          "choices": [
+            {
+              "value": "White"
+            },
+            {
+              "value": "Warm Eggshell"
+            },
+            {
+              "value": "Blue Gray"
+            }
+          ]
+        },
+        "multiple": false,
+        "uid": "background_color",
+        "field_metadata": {
+          "description": "",
+          "default_value": "White"
+        },
+        "mandatory": false,
+        "non_localizable": false,
+        "unique": false
+      }
+    ]
+  }
+}

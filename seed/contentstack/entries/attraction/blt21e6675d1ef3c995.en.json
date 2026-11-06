@@ -1,0 +1,16 @@
+{
+  "entry": {
+    "title": "Zandvoort Beach",
+    "blurb": "Through the dunes all the way to a North Sea finish.",
+    "latitude": 52.3738,
+    "longitude": 4.526,
+    "locale": "en",
+    "uid": "blt21e6675d1ef3c995",
+    "tags": []
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

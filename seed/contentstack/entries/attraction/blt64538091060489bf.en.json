@@ -1,0 +1,16 @@
+{
+  "entry": {
+    "title": "Durgerdam",
+    "blurb": "Wooden dike houses on the IJmeer, a classic Waterland ride.",
+    "latitude": 52.3802,
+    "longitude": 5.008,
+    "locale": "en",
+    "uid": "blt64538091060489bf",
+    "tags": []
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

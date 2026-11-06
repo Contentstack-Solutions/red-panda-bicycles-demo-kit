@@ -1,0 +1,26 @@
+{
+  "entry": {
+    "title": "test",
+    "image": {
+      "uid": "amc73c9bf25473adcc",
+      "filename": "countryside-range-reliability-banner.png",
+      "title": "countryside range reliability banner"
+    },
+    "eyebrow_text": "test",
+    "headline": "test",
+    "description": "test",
+    "button_text": "test",
+    "page": [],
+    "trust_strip": {
+      "items": [],
+      "background_color": "White"
+    },
+    "tags": [],
+    "locale": "en",
+    "uid": "blt6216bcb21623161f"
+  },
+  "publish_environments": [
+    "dev",
+    "preview"
+  ]
+}

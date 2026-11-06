@@ -1,0 +1,84 @@
+{
+  "content_type": {
+    "uid": "blog_page",
+    "title": "Blog Page",
+    "options": {
+      "is_page": false,
+      "singleton": true,
+      "title": "title",
+      "sub_title": []
+    },
+    "schema": [
+      {
+        "mandatory": true,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": true,
+        "data_type": "text",
+        "uid": "title",
+        "display_name": "Title",
+        "field_metadata": {
+          "description": "",
+          "default_value": "",
+          "_default": true
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "eyebrow_text",
+        "display_name": "Eyebrow",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "headline",
+        "display_name": "Headline",
+        "field_metadata": {
+          "description": "End with . ! or ? to get the accent colour.",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "intro",
+        "display_name": "Intro",
+        "field_metadata": {
+          "description": "",
+          "default_value": "",
+          "multiline": true
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      }
+    ]
+  }
+}

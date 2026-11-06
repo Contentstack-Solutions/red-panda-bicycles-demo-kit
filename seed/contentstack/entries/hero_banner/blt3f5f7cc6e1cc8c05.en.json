@@ -1,0 +1,31 @@
+{
+  "entry": {
+    "title": "Brighter Days Banner",
+    "image": {
+      "uid": "am14f88a676a6ecdfb",
+      "filename": "sunny_on_bike.avif",
+      "title": "sunny_on_bike.avif"
+    },
+    "eyebrow_text": "SAME PEOPLE. MORE PEDALS.",
+    "headline": "Bikes for\nBrighter\nDays.",
+    "description": "Classic style. Everyday utility. A little\nhelp from a panda.",
+    "button_text": "Explore Our Bikes",
+    "page": [
+      {
+        "uid": "bltd721b60dbddc0406",
+        "_content_type_uid": "page"
+      }
+    ],
+    "tags": [],
+    "locale": "en",
+    "uid": "blt3f5f7cc6e1cc8c05",
+    "trust_strip": {
+      "items": []
+    }
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

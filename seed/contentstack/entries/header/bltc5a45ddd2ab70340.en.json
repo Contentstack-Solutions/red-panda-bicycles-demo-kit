@@ -1,0 +1,64 @@
+{
+  "entry": {
+    "title": "Header",
+    "logo": {
+      "uid": "am4bc2ba5081e82387",
+      "filename": "rp-bikes.png",
+      "title": "rp-bikes.png"
+    },
+    "menu_items": [
+      {
+        "text": "Bikes",
+        "_metadata": {
+          "uid": "cs5eec3ad49fd6b7f3"
+        },
+        "page": [
+          {
+            "uid": "bltde7b62f4aefc327a",
+            "_content_type_uid": "e_bikes"
+          }
+        ],
+        "external_link": ""
+      },
+      {
+        "text": "Accessories",
+        "_metadata": {
+          "uid": "cs98cdcdb154b200ff"
+        },
+        "page": [],
+        "external_link": "/plp/accessories"
+      },
+      {
+        "text": "Our Story",
+        "_metadata": {
+          "uid": "csbed602a26bd1cda1"
+        },
+        "page": [],
+        "external_link": ""
+      },
+      {
+        "text": "Blog",
+        "external_link": "/blog",
+        "page": [],
+        "_metadata": {
+          "uid": "cs4a2ecebb33621203"
+        }
+      },
+      {
+        "text": "Support",
+        "_metadata": {
+          "uid": "csc88b4f05f6e82f82"
+        },
+        "page": [],
+        "external_link": ""
+      }
+    ],
+    "tags": [],
+    "locale": "en",
+    "uid": "bltc5a45ddd2ab70340"
+  },
+  "publish_environments": [
+    "preview",
+    "dev"
+  ]
+}

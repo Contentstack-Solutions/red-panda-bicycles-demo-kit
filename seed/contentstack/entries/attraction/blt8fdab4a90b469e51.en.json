@@ -1,0 +1,16 @@
+{
+  "entry": {
+    "title": "Amstelpark",
+    "blurb": "Rose gardens, a hedge maze and a mini train in the south.",
+    "latitude": 52.3312,
+    "longitude": 4.8935,
+    "locale": "en",
+    "uid": "blt8fdab4a90b469e51",
+    "tags": []
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

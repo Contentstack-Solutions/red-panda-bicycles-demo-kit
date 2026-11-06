@@ -1,0 +1,246 @@
+{
+  "content_type": {
+    "uid": "blog_article",
+    "title": "Blog Article",
+    "options": {
+      "is_page": true,
+      "singleton": false,
+      "title": "title",
+      "sub_title": [],
+      "url_pattern": "/blog/:title",
+      "url_prefix": "/"
+    },
+    "schema": [
+      {
+        "mandatory": true,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": true,
+        "data_type": "text",
+        "uid": "title",
+        "display_name": "Title",
+        "field_metadata": {
+          "description": "",
+          "default_value": "",
+          "_default": true
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": true,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": true,
+        "data_type": "text",
+        "uid": "url",
+        "display_name": "URL",
+        "field_metadata": {
+          "description": "",
+          "default_value": "",
+          "_default": true
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "category",
+        "display_name": "Category",
+        "display_type": "dropdown",
+        "enum": {
+          "advanced": true,
+          "choices": [
+            {
+              "key": "Guides",
+              "value": "guides"
+            },
+            {
+              "key": "Rider Diaries",
+              "value": "diaries"
+            },
+            {
+              "key": "Tips",
+              "value": "tips"
+            }
+          ]
+        },
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "excerpt",
+        "display_name": "Excerpt",
+        "field_metadata": {
+          "description": "One or two sentences for preview cards.",
+          "default_value": "",
+          "multiline": true
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "file",
+        "uid": "cover_image",
+        "display_name": "Cover image",
+        "field_metadata": {
+          "description": "",
+          "rich_text_type": "standard",
+          "image": true
+        },
+        "dimension": {
+          "width": {
+            "min": 1,
+            "max": null
+          },
+          "height": {
+            "min": 1,
+            "max": null
+          }
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "author_name",
+        "display_name": "Author name",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "author_role",
+        "display_name": "Author role",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": true,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "isodate",
+        "uid": "publish_date",
+        "display_name": "Publish date",
+        "startDate": null,
+        "endDate": null,
+        "field_metadata": {
+          "description": "",
+          "default_value": {},
+          "hide_time": true
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "json",
+        "uid": "body",
+        "display_name": "Body",
+        "field_metadata": {
+          "allow_json_rte": true,
+          "embed_entry": false,
+          "description": "",
+          "default_value": "",
+          "multiline": false,
+          "rich_text_type": "advanced",
+          "options": []
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "reference_to": [
+          "sys_assets"
+        ]
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "global_field",
+        "uid": "trip_planner",
+        "display_name": "Trip Planner",
+        "reference_to": "trip_planner",
+        "field_metadata": {
+          "description": "Optional. Shown at the end of the article when it has attractions."
+        }
+      },
+      {
+        "uid": "taxonomies",
+        "display_name": "Taxonomy",
+        "data_type": "taxonomy",
+        "taxonomies": [
+          {
+            "taxonomy_uid": "article",
+            "max_terms": 5,
+            "mandatory": false,
+            "multiple": true,
+            "non_localizable": false
+          },
+          {
+            "taxonomy_uid": "locations",
+            "max_terms": 5,
+            "mandatory": false,
+            "multiple": true,
+            "non_localizable": false
+          }
+        ],
+        "field_metadata": {
+          "description": "Topics and places this article covers.",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": true,
+        "non_localizable": false,
+        "unique": false
+      }
+    ]
+  }
+}

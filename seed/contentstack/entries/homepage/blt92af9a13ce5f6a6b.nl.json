@@ -1,0 +1,335 @@
+{
+  "entry": {
+    "uid": "blt92af9a13ce5f6a6b",
+    "locale": "nl",
+    "modular_blocks": [
+      {
+        "category_banner": {
+          "eyebrow_text": "Onze fietsen",
+          "title": "Vind jouw perfecte rit.",
+          "link_text": "Bekijk alle fietsen",
+          "link_page": [
+            {
+              "uid": "bltde7b62f4aefc327a",
+              "_content_type_uid": "e_bikes"
+            }
+          ],
+          "background_color": "Warm Eggshell",
+          "category": [
+            {
+              "product_item": {
+                "selectedIds": [
+                  "93419db3-1877-4e87-a788-0816ffdae962"
+                ],
+                "items": [
+                  {
+                    "id": "93419db3-1877-4e87-a788-0816ffdae962",
+                    "name": "City Bikes",
+                    "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/category-images/city_bike.avif",
+                    "url": "city-bikes",
+                    "description": "<p>Comfortabele, praktische fietsen voor woon-werkverkeer en dagelijks fietsen in de stad.</p>",
+                    "children": [],
+                    "locale": "en"
+                  }
+                ]
+              },
+              "title": "Stadsfietsen",
+              "description": "Gemaakt voor dagelijks avontuur.",
+              "link": [],
+              "enter_url": "/plp/city-bikes",
+              "_metadata": {
+                "uid": "csdb9c8bf64b78c245"
+              }
+            },
+            {
+              "product_item": {
+                "selectedIds": [
+                  "b35b43c5-191e-4f4d-a385-714c7a6e24d1"
+                ],
+                "items": [
+                  {
+                    "id": "b35b43c5-191e-4f4d-a385-714c7a6e24d1",
+                    "name": "Lifestyle Bikes",
+                    "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/category-images/lifestyle_bikes.avif",
+                    "url": "lifestyle-bikes",
+                    "description": "<p>Hardtails en full-suspensionfietsen voor singletracks, enduro en downhill.</p>",
+                    "children": [],
+                    "locale": "en"
+                  }
+                ]
+              },
+              "title": "Lifestyle-fietsen",
+              "description": "Comfort ontmoet klassieke stijl.",
+              "link": [],
+              "_metadata": {
+                "uid": "cs3fdbada42f891f5c"
+              }
+            },
+            {
+              "product_item": {
+                "selectedIds": [
+                  "aca2e1a4-83f2-427d-aace-98ee584237da"
+                ],
+                "items": [
+                  {
+                    "id": "aca2e1a4-83f2-427d-aace-98ee584237da",
+                    "name": "E-Bikes",
+                    "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/category-images/ebike.avif",
+                    "url": "e-bikes",
+                    "description": "<p>Elektrische fietsen met trapondersteuning voor woon-werkverkeer, toertochten en trails.</p>",
+                    "children": [],
+                    "locale": "en"
+                  }
+                ]
+              },
+              "title": "E-bikes",
+              "description": "Ga verder, maar niet té ver.",
+              "badge": "Nieuw model!",
+              "link": [
+                {
+                  "uid": "blt7246ce7e8605f697",
+                  "_content_type_uid": "e_bikes"
+                }
+              ],
+              "_metadata": {
+                "uid": "cs7a976dbc9ee2988a"
+              }
+            }
+          ],
+          "_metadata": {
+            "uid": "csd90104c475e24828"
+          }
+        }
+      },
+      {
+        "trust_strip": {
+          "items": [
+            {
+              "image": {
+                "uid": "am9b342a14c162bb7f",
+                "filename": "windmill.avif",
+                "title": "windmill.avif"
+              },
+              "title": "Sinds 1974",
+              "description": "50 jaar op twee wielen",
+              "_metadata": {
+                "uid": "cse58df36971b15b11"
+              }
+            },
+            {
+              "image": {
+                "uid": "am227d5ec7adcfb0d5",
+                "filename": "trees.avif",
+                "title": "trees.avif"
+              },
+              "title": "Gemaakt om lang mee te gaan",
+              "description": "Kwaliteit waarop je kunt rekenen",
+              "_metadata": {
+                "uid": "csa8f36ecdfbf3736f"
+              }
+            },
+            {
+              "image": {
+                "uid": "am8e78487702a28cfd",
+                "filename": "leaf.avif",
+                "title": "leaf.avif"
+              },
+              "title": "Een schonere toekomst",
+              "description": "Gelukkigere steden, gezondere mensen",
+              "_metadata": {
+                "uid": "cs5ac3e53da4768305"
+              }
+            },
+            {
+              "image": {
+                "uid": "am32a89df6eaa6945c",
+                "filename": "heart.avif",
+                "title": "heart.avif"
+              },
+              "title": "Rijders op één",
+              "description": "Echte mensen. Echte support.",
+              "_metadata": {
+                "uid": "cs2762e1af473e3acd"
+              }
+            }
+          ],
+          "background_color": "White",
+          "_metadata": {
+            "uid": "cs45f6ac3989b5bb7f"
+          }
+        }
+      },
+      {
+        "trip_planner": {
+          "eyebrow_text": "Plan je rit",
+          "title": "Waar gaan we heen?",
+          "intro": "Kies een bestemming en we laten zien hoe ver die is — en welke Red Panda je er met plezier naartoe brengt.",
+          "background_color": "Warm Eggshell",
+          "attractions": [
+            {
+              "uid": "bltff399866459417e2",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt0943db648fb27b7b",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt75caacca92866ce3",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blta6d86fd489734ac8",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt64215dc96220369f",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "bltb09cb14156d18b89",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt8fdab4a90b469e51",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt64538091060489bf",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt0f9cf23219a0214c",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt7aa5b13ae0fca463",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt5e613c825379eb6c",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt21e6675d1ef3c995",
+              "_content_type_uid": "attraction"
+            }
+          ],
+          "threshold_km": 5,
+          "fallback_label": "Amsterdam Centraal",
+          "fallback_latitude": 52.3791,
+          "fallback_longitude": 4.9003,
+          "max_origin_km": 50,
+          "bikes": [
+            {
+              "title": "E-bikes",
+              "image": {
+                "uid": "am658fbc378a9e9a0b",
+                "filename": "ebike.avif",
+                "title": "ebike.avif"
+              },
+              "description": "Moeiteloos kilometers maken, ongeacht de afstand.",
+              "best_for": "any",
+              "link_page": [
+                {
+                  "uid": "bltc402c2250955e4be",
+                  "_content_type_uid": "pdp"
+                }
+              ],
+              "_metadata": {
+                "uid": "cs9f8014ddf154670d"
+              }
+            },
+            {
+              "title": "Stadsfietsen",
+              "image": {
+                "uid": "am2f694bcae48fa1ef",
+                "filename": "city_bike.avif",
+                "title": "city_bike.avif"
+              },
+              "description": "Perfect om de stad te doorkruisen.",
+              "best_for": "short",
+              "link_page": [],
+              "_metadata": {
+                "uid": "cs988ba7edd2190aee"
+              }
+            }
+          ],
+          "_metadata": {
+            "uid": "cs03d89b9c1ceace19"
+          }
+        }
+      },
+      {
+        "article_previews": {
+          "eyebrow_text": "Uit het magazine",
+          "title": "Aanbevolen artikelen",
+          "link_text": "Lees het magazine",
+          "background_color": "Blue Gray",
+          "articles": [
+            {
+              "uid": "bltd24688284ac70c2f",
+              "_content_type_uid": "blog_article"
+            },
+            {
+              "uid": "blt331c96e80897b49e",
+              "_content_type_uid": "blog_article"
+            },
+            {
+              "uid": "bltb9cd165941b883ad",
+              "_content_type_uid": "blog_article"
+            }
+          ],
+          "_metadata": {
+            "uid": "cs9e89c868d1be3835"
+          }
+        }
+      },
+      {
+        "text_and_image": {
+          "image": {
+            "uid": "am7ef4cbef7d463b0e",
+            "filename": "rp_jacket.avif",
+            "title": "rp_jacket.avif"
+          },
+          "image_right": false,
+          "eyebrow_text": "Ons verhaal",
+          "headline": "Generaties lang op de fiets.",
+          "body": "Wat begon als een kleine fietsenwinkel in Nederland is uitgegroeid tot een wereldwijde gemeenschap van fietsers. Al meer dan 50 jaar geloven we in de eenvoudige kracht van een fiets om een stralender, gezonder en meer verbonden leven te creëren.",
+          "button_text": "Ons verhaal",
+          "background_color": "Warm Eggshell",
+          "background_image": {
+            "uid": "am559b17ac055181bf",
+            "filename": "windmill.avif",
+            "title": "windmill.avif"
+          },
+          "page": [
+            {
+              "uid": "blta1345c14d3fa0a97",
+              "_content_type_uid": "page"
+            }
+          ],
+          "text_white": false,
+          "_metadata": {
+            "uid": "cse59a37c2af5110d8"
+          }
+        }
+      },
+      {
+        "newsletter_signup": {
+          "title": "Ga met ons mee.",
+          "placeholder": "Je e-mailadres",
+          "button_text": "Aanmelden",
+          "background_color": "White",
+          "_metadata": {
+            "uid": "csa0cfef7d401648ac"
+          }
+        }
+      }
+    ],
+    "tags": [],
+    "title": "Homepage - Nederlands",
+    "url": "/"
+  },
+  "publish_environments": []
+}

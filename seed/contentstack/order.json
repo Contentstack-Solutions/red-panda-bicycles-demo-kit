@@ -1,0 +1,140 @@
+{
+  "content_types": [
+    "page",
+    "e_bikes",
+    "pdp",
+    "homepage",
+    "hero_banner",
+    "header",
+    "footer",
+    "blog_page",
+    "blog_article",
+    "attraction"
+  ],
+  "entries": [
+    {
+      "ct": "page",
+      "uid": "bltd721b60dbddc0406"
+    },
+    {
+      "ct": "e_bikes",
+      "uid": "blt7246ce7e8605f697"
+    },
+    {
+      "ct": "e_bikes",
+      "uid": "bltde7b62f4aefc327a"
+    },
+    {
+      "ct": "pdp",
+      "uid": "bltc402c2250955e4be"
+    },
+    {
+      "ct": "pdp",
+      "uid": "blt3c3a2bb54d9fd562"
+    },
+    {
+      "ct": "pdp",
+      "uid": "blt5346caff32dced9e"
+    },
+    {
+      "ct": "pdp",
+      "uid": "bltf1a872af8e1020f3"
+    },
+    {
+      "ct": "homepage",
+      "uid": "blt92af9a13ce5f6a6b"
+    },
+    {
+      "ct": "hero_banner",
+      "uid": "blt3f5f7cc6e1cc8c05"
+    },
+    {
+      "ct": "hero_banner",
+      "uid": "blt6216bcb21623161f"
+    },
+    {
+      "ct": "hero_banner",
+      "uid": "bltaef8fc63b4171f82"
+    },
+    {
+      "ct": "header",
+      "uid": "bltc5a45ddd2ab70340"
+    },
+    {
+      "ct": "footer",
+      "uid": "blt429de806c8606f23"
+    },
+    {
+      "ct": "blog_page",
+      "uid": "blt5b78749c3948d087"
+    },
+    {
+      "ct": "blog_article",
+      "uid": "blt2e1437d90e1cc6dc"
+    },
+    {
+      "ct": "blog_article",
+      "uid": "blt181cef2befe24373"
+    },
+    {
+      "ct": "blog_article",
+      "uid": "bltf5cfc8cd413908f4"
+    },
+    {
+      "ct": "blog_article",
+      "uid": "bltb9cd165941b883ad"
+    },
+    {
+      "ct": "blog_article",
+      "uid": "blt331c96e80897b49e"
+    },
+    {
+      "ct": "attraction",
+      "uid": "blt21e6675d1ef3c995"
+    },
+    {
+      "ct": "attraction",
+      "uid": "blt5e613c825379eb6c"
+    },
+    {
+      "ct": "attraction",
+      "uid": "blt7aa5b13ae0fca463"
+    },
+    {
+      "ct": "attraction",
+      "uid": "blt0f9cf23219a0214c"
+    },
+    {
+      "ct": "attraction",
+      "uid": "blt64538091060489bf"
+    },
+    {
+      "ct": "attraction",
+      "uid": "blt8fdab4a90b469e51"
+    },
+    {
+      "ct": "attraction",
+      "uid": "bltb09cb14156d18b89"
+    },
+    {
+      "ct": "attraction",
+      "uid": "blt64215dc96220369f"
+    },
+    {
+      "ct": "attraction",
+      "uid": "blta6d86fd489734ac8"
+    },
+    {
+      "ct": "attraction",
+      "uid": "blt75caacca92866ce3"
+    },
+    {
+      "ct": "attraction",
+      "uid": "blt0943db648fb27b7b"
+    },
+    {
+      "ct": "attraction",
+      "uid": "bltff399866459417e2"
+    }
+  ]
+}

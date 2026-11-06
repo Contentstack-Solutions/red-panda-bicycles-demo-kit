@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node .claude/skills/red-panda-customer-insights/scripts/rp.mjs:*)",
+      "Bash(npm run kit:*)",
+      "mcp__red-panda-insights"
+    ],
+    "ask": [
+      "Bash(npm run kit:teardown -- --yes*)",
+      "Bash(npm run kit:reset -- --yes*)",
+      "Bash(npm run kit:teardown -- --yes)",
+      "Bash(npm run kit:reset -- --yes)",
+      "Bash(npm run kit:teardown *--yes*)",
+      "Bash(npm run kit:reset *--yes*)",
+      "mcp__red-panda-insights__publish_variants_of_an_entry",
+      "mcp__red-panda-insights__create_an_entry_variant",
+      "Bash(node .claude/skills/red-panda-customer-insights/scripts/rp.mjs lytics-delete-audience*)",
+      "Bash(node .claude/skills/red-panda-customer-insights/scripts/rp.mjs personalize-delete-experience*)",
+      "Bash(node .claude/skills/red-panda-customer-insights/scripts/rp.mjs cms-delete-entry*)",
+      "Bash(node .claude/skills/red-panda-customer-insights/scripts/rp.mjs cms-delete-variant*)",
+      "Bash(node .claude/skills/red-panda-customer-insights/scripts/rp.mjs cms-unpublish-variant*)"
+    ]
+  }
+}

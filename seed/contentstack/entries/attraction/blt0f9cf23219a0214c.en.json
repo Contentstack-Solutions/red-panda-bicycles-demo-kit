@@ -1,0 +1,16 @@
+{
+  "entry": {
+    "title": "Amsterdamse Bos",
+    "blurb": "Forest trails and lakes, three times the size of Central Park.",
+    "latitude": 52.314,
+    "longitude": 4.833,
+    "locale": "en",
+    "uid": "blt0f9cf23219a0214c",
+    "tags": []
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

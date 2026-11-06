@@ -1,0 +1,56 @@
+{
+  "entry": {
+    "title": "Fortress U-lock",
+    "url": "/pdp/fortress-u-lock",
+    "promo_banner": "",
+    "product": {
+      "selectedIds": [
+        "ae341bdb-a269-4b9d-9e46-6d1c4026c91c"
+      ],
+      "items": [
+        {
+          "id": "ae341bdb-a269-4b9d-9e46-6d1c4026c91c",
+          "name": "Fortress U-Lock",
+          "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/lock.avif",
+          "media": [
+            {
+              "id": 55564,
+              "name": "lock.avif",
+              "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/lock.avif",
+              "type": "image",
+              "ordernum": 0,
+              "language_id": 875,
+              "locale": "en",
+              "language_name": "English",
+              "is_default_language": true
+            }
+          ],
+          "url": "fortress-u-lock",
+          "brand": "Red Panda",
+          "description": "<p>Serious security without the bulk. Hardened steel construction and a compact design make the Fortress an easy everyday companion for city stops and daily commutes.</p>",
+          "productType": "single",
+          "price": 79,
+          "currency_code": "EUR",
+          "currency_symbol": "€",
+          "locale": "en"
+        }
+      ]
+    },
+    "eyebrow_text": "",
+    "product_name": "Fortress U-lock",
+    "price": "",
+    "button_text": "",
+    "description": "",
+    "images": [],
+    "tags": [
+      "accessory"
+    ],
+    "locale": "en",
+    "uid": "blt5346caff32dced9e"
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

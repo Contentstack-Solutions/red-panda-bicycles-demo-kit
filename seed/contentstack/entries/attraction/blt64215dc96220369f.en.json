@@ -1,0 +1,16 @@
+{
+  "entry": {
+    "title": "Vondelpark",
+    "blurb": "Amsterdam's favourite park for a lazy loop.",
+    "latitude": 52.358,
+    "longitude": 4.8686,
+    "locale": "en",
+    "uid": "blt64215dc96220369f",
+    "tags": []
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

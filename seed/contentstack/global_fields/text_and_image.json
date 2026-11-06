@@ -1,0 +1,195 @@
+{
+  "global_field": {
+    "uid": "text_and_image",
+    "title": "Text and Image",
+    "schema": [
+      {
+        "data_type": "file",
+        "display_name": "Image",
+        "uid": "image",
+        "field_metadata": {
+          "description": "",
+          "rich_text_type": "standard",
+          "image": true
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "dimension": {
+          "width": {
+            "min": null,
+            "max": null
+          },
+          "height": {
+            "min": null,
+            "max": null
+          }
+        }
+      },
+      {
+        "data_type": "boolean",
+        "display_name": "Image Right",
+        "uid": "image_right",
+        "field_metadata": {
+          "description": "",
+          "default_value": false
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Eyebrow Text",
+        "uid": "eyebrow_text",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Headline",
+        "uid": "headline",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Body",
+        "uid": "body",
+        "field_metadata": {
+          "description": "",
+          "default_value": "",
+          "multiline": true
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Button Text",
+        "uid": "button_text",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Background Color",
+        "display_type": "dropdown",
+        "enum": {
+          "advanced": false,
+          "choices": [
+            {
+              "value": "White"
+            },
+            {
+              "value": "Warm Eggshell"
+            },
+            {
+              "value": "Blue Gray"
+            }
+          ]
+        },
+        "multiple": false,
+        "uid": "background_color",
+        "field_metadata": {
+          "description": "",
+          "default_value": "White"
+        },
+        "mandatory": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "file",
+        "display_name": "Background Image",
+        "uid": "background_image",
+        "field_metadata": {
+          "description": "",
+          "rich_text_type": "standard",
+          "image": true
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "dimension": {
+          "width": {
+            "min": null,
+            "max": null
+          },
+          "height": {
+            "min": null,
+            "max": null
+          }
+        }
+      },
+      {
+        "data_type": "reference",
+        "display_name": "Page",
+        "reference_to": [
+          "page"
+        ],
+        "field_metadata": {
+          "ref_multiple": false,
+          "ref_multiple_content_types": true
+        },
+        "uid": "page",
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "boolean",
+        "display_name": "Text White",
+        "uid": "text_white",
+        "field_metadata": {
+          "description": "",
+          "default_value": false
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      }
+    ]
+  }
+}

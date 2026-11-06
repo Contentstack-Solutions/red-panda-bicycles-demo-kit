@@ -1,0 +1,271 @@
+{
+  "global_field": {
+    "uid": "product_banner",
+    "title": "Product Banner",
+    "schema": [
+      {
+        "data_type": "text",
+        "display_name": "Eyebrow Text",
+        "uid": "eyebrow_text",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Title",
+        "uid": "title",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Link Text",
+        "uid": "link_text",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "reference",
+        "display_name": "Link Page",
+        "reference_to": [
+          "page",
+          "e_bikes"
+        ],
+        "field_metadata": {
+          "ref_multiple": false,
+          "ref_multiple_content_types": true
+        },
+        "uid": "link_page",
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Background Color",
+        "display_type": "dropdown",
+        "enum": {
+          "advanced": false,
+          "choices": [
+            {
+              "value": "White"
+            },
+            {
+              "value": "Warm Eggshell"
+            },
+            {
+              "value": "Blue Gray"
+            }
+          ]
+        },
+        "multiple": false,
+        "uid": "background_color",
+        "field_metadata": {
+          "description": "",
+          "default_value": "White"
+        },
+        "mandatory": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "group",
+        "display_name": "Products",
+        "field_metadata": {
+          "description": "",
+          "instruction": ""
+        },
+        "schema": [
+          {
+            "display_name": "Product Item",
+            "extension_uid": "blt178c6b69dcb0752a",
+            "field_metadata": {
+              "extension": true
+            },
+            "uid": "product_item",
+            "mandatory": false,
+            "multiple": false,
+            "non_localizable": false,
+            "unique": false,
+            "config": {},
+            "data_type": "json"
+          },
+          {
+            "data_type": "file",
+            "display_name": "Image",
+            "uid": "image",
+            "field_metadata": {
+              "description": "",
+              "rich_text_type": "standard",
+              "image": true
+            },
+            "mandatory": false,
+            "multiple": false,
+            "non_localizable": false,
+            "unique": false,
+            "dimension": {
+              "width": {
+                "min": 1,
+                "max": null
+              },
+              "height": {
+                "min": 1,
+                "max": null
+              }
+            }
+          },
+          {
+            "data_type": "text",
+            "display_name": "Title",
+            "uid": "title",
+            "field_metadata": {
+              "description": "",
+              "default_value": "",
+              "isTitle": true
+            },
+            "format": "",
+            "error_messages": {
+              "format": ""
+            },
+            "mandatory": false,
+            "multiple": false,
+            "non_localizable": false,
+            "unique": false
+          },
+          {
+            "data_type": "text",
+            "display_name": "Description",
+            "uid": "description",
+            "field_metadata": {
+              "description": "",
+              "default_value": ""
+            },
+            "format": "",
+            "error_messages": {
+              "format": ""
+            },
+            "mandatory": false,
+            "multiple": false,
+            "non_localizable": false,
+            "unique": false
+          },
+          {
+            "data_type": "text",
+            "display_name": "Badge",
+            "uid": "badge",
+            "field_metadata": {
+              "description": "Optional sticker shown over the image, e.g. \"New Model!\". Leave empty for none.",
+              "default_value": ""
+            },
+            "format": "",
+            "error_messages": {
+              "format": ""
+            },
+            "mandatory": false,
+            "multiple": false,
+            "non_localizable": false,
+            "unique": false
+          },
+          {
+            "data_type": "group",
+            "display_name": "Features",
+            "field_metadata": {
+              "description": "",
+              "instruction": ""
+            },
+            "schema": [
+              {
+                "data_type": "group",
+                "display_name": "Item",
+                "field_metadata": {
+                  "description": "",
+                  "instruction": ""
+                },
+                "schema": [
+                  {
+                    "data_type": "file",
+                    "display_name": "Icon",
+                    "uid": "icon",
+                    "extensions": [],
+                    "field_metadata": {
+                      "description": "",
+                      "rich_text_type": "standard"
+                    },
+                    "mandatory": false,
+                    "multiple": false,
+                    "non_localizable": false,
+                    "unique": false
+                  },
+                  {
+                    "data_type": "text",
+                    "display_name": "Title",
+                    "uid": "title",
+                    "field_metadata": {
+                      "description": "",
+                      "default_value": "",
+                      "isTitle": true
+                    },
+                    "format": "",
+                    "error_messages": {
+                      "format": ""
+                    },
+                    "mandatory": false,
+                    "multiple": false,
+                    "non_localizable": false,
+                    "unique": false
+                  }
+                ],
+                "uid": "item",
+                "mandatory": false,
+                "multiple": true,
+                "non_localizable": false,
+                "unique": false
+              }
+            ],
+            "uid": "features",
+            "mandatory": false,
+            "multiple": true,
+            "non_localizable": false,
+            "unique": false
+          }
+        ],
+        "uid": "products",
+        "mandatory": false,
+        "multiple": true,
+        "non_localizable": false,
+        "unique": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,348 @@
+{
+  "entry": {
+    "title": "Homepage",
+    "hero": [
+      {
+        "uid": "blt3f5f7cc6e1cc8c05",
+        "_content_type_uid": "hero_banner"
+      }
+    ],
+    "modular_blocks": [
+      {
+        "category_banner": {
+          "eyebrow_text": "Our Bikes",
+          "_metadata": {
+            "uid": "cs33e89f6a704df8e5"
+          },
+          "title": "Find Your Perfect Ride.",
+          "link_text": "View all bikes",
+          "link_page": [
+            {
+              "uid": "bltde7b62f4aefc327a",
+              "_content_type_uid": "e_bikes"
+            }
+          ],
+          "background_color": "Warm Eggshell",
+          "category": [
+            {
+              "product_item": {
+                "selectedIds": [
+                  "93419db3-1877-4e87-a788-0816ffdae962"
+                ],
+                "items": [
+                  {
+                    "id": "93419db3-1877-4e87-a788-0816ffdae962",
+                    "name": "City Bikes",
+                    "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/category-images/city_bike.avif",
+                    "url": "city-bikes",
+                    "description": "<p>Comfortable, practical bikes for commuting and everyday urban riding.</p>",
+                    "children": [],
+                    "locale": "en"
+                  }
+                ]
+              },
+              "_metadata": {
+                "uid": "cs32778b85ecdab2b6"
+              },
+              "image": null,
+              "title": "City Bikes",
+              "description": "Built for daily adventures.",
+              "badge": "",
+              "link": [],
+              "enter_url": "/plp/city-bikes"
+            },
+            {
+              "product_item": {
+                "selectedIds": [
+                  "b35b43c5-191e-4f4d-a385-714c7a6e24d1"
+                ],
+                "items": [
+                  {
+                    "id": "b35b43c5-191e-4f4d-a385-714c7a6e24d1",
+                    "name": "Lifestyle Bikes",
+                    "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/category-images/lifestyle_bikes.avif",
+                    "url": "lifestyle-bikes",
+                    "description": "<p>Hardtail and full-suspension bikes for singletrack, enduro and downhill.</p>",
+                    "children": [],
+                    "locale": "en"
+                  }
+                ]
+              },
+              "_metadata": {
+                "uid": "csd87da02ed3ac600c"
+              },
+              "image": null,
+              "title": "Lifestyle Bikes",
+              "description": "Comfort meets classic style.",
+              "badge": "",
+              "link": [],
+              "enter_url": ""
+            },
+            {
+              "product_item": {
+                "selectedIds": [
+                  "aca2e1a4-83f2-427d-aace-98ee584237da"
+                ],
+                "items": [
+                  {
+                    "id": "aca2e1a4-83f2-427d-aace-98ee584237da",
+                    "name": "E-Bikes",
+                    "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/category-images/ebike.avif",
+                    "url": "e-bikes",
+                    "description": "<p>Pedal-assist electric bikes for commuting, touring and trail riding.</p>",
+                    "children": [],
+                    "locale": "en"
+                  }
+                ]
+              },
+              "_metadata": {
+                "uid": "cs5cd1c640639d9a55"
+              },
+              "image": null,
+              "title": "E-Bikes",
+              "description": "Go further (but not too far)",
+              "badge": "New Model!",
+              "link": [
+                {
+                  "uid": "blt7246ce7e8605f697",
+                  "_content_type_uid": "e_bikes"
+                }
+              ],
+              "enter_url": ""
+            }
+          ]
+        }
+      },
+      {
+        "trust_strip": {
+          "items": [
+            {
+              "image": {
+                "uid": "am9b342a14c162bb7f",
+                "filename": "windmill.avif",
+                "title": "windmill.avif"
+              },
+              "_metadata": {
+                "uid": "cs421a914b3d519516"
+              },
+              "title": "Since 1974",
+              "description": "50 years on two wheels"
+            },
+            {
+              "image": {
+                "uid": "am227d5ec7adcfb0d5",
+                "filename": "trees.avif",
+                "title": "trees.avif"
+              },
+              "_metadata": {
+                "uid": "csf92cd81d74157453"
+              },
+              "title": "Built to last",
+              "description": "Quality you can count on"
+            },
+            {
+              "image": {
+                "uid": "am8e78487702a28cfd",
+                "filename": "leaf.avif",
+                "title": "leaf.avif"
+              },
+              "_metadata": {
+                "uid": "csf7ca6837a749c0ff"
+              },
+              "title": "A Cleaner Tomorrow",
+              "description": "Happier cities, healthier people"
+            },
+            {
+              "image": {
+                "uid": "am32a89df6eaa6945c",
+                "filename": "heart.avif",
+                "title": "heart.avif"
+              },
+              "_metadata": {
+                "uid": "cs5b3245e8f7e3c7ca"
+              },
+              "title": "Riders First",
+              "description": "Real People. Real Support."
+            }
+          ],
+          "_metadata": {
+            "uid": "cs5453e150f2f335f3"
+          },
+          "background_color": "White"
+        }
+      },
+      {
+        "trip_planner": {
+          "eyebrow_text": "Plan your ride",
+          "_metadata": {
+            "uid": "csf06ddbfb72386d24"
+          },
+          "title": "Where to next.",
+          "intro": "Pick a spot and we'll show how far it is — and which Red Panda will get you there happily.",
+          "background_color": "Warm Eggshell",
+          "attractions": [
+            {
+              "uid": "bltff399866459417e2",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt0943db648fb27b7b",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt75caacca92866ce3",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blta6d86fd489734ac8",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt64215dc96220369f",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "bltb09cb14156d18b89",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt8fdab4a90b469e51",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt64538091060489bf",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt0f9cf23219a0214c",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt7aa5b13ae0fca463",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt5e613c825379eb6c",
+              "_content_type_uid": "attraction"
+            },
+            {
+              "uid": "blt21e6675d1ef3c995",
+              "_content_type_uid": "attraction"
+            }
+          ],
+          "threshold_km": 5,
+          "fallback_label": "Amsterdam Centraal",
+          "fallback_latitude": 52.3791,
+          "fallback_longitude": 4.9003,
+          "max_origin_km": 50,
+          "bikes": [
+            {
+              "title": "E-Bikes",
+              "_metadata": {
+                "uid": "cs4d29dcf1c8793b55"
+              },
+              "image": {
+                "uid": "am658fbc378a9e9a0b",
+                "filename": "ebike.avif",
+                "title": "ebike.avif"
+              },
+              "description": "Effortless miles, whatever the distance.",
+              "best_for": "any",
+              "link_page": [
+                {
+                  "uid": "bltc402c2250955e4be",
+                  "_content_type_uid": "pdp"
+                }
+              ]
+            },
+            {
+              "title": "City Bikes",
+              "_metadata": {
+                "uid": "cs3b4e96aedd97ef2b"
+              },
+              "image": {
+                "uid": "am2f694bcae48fa1ef",
+                "filename": "city_bike.avif",
+                "title": "city_bike.avif"
+              },
+              "description": "Perfect for hopping across town.",
+              "best_for": "short",
+              "link_page": []
+            }
+          ]
+        }
+      },
+      {
+        "article_previews": {
+          "eyebrow_text": "From the Journal",
+          "_metadata": {
+            "uid": "csa4f86aad1d76c555"
+          },
+          "title": "Recommended Articles",
+          "link_text": "Read the Journal",
+          "background_color": "Blue Gray",
+          "articles": [
+            {
+              "uid": "blt331c96e80897b49e",
+              "_content_type_uid": "blog_article"
+            },
+            {
+              "uid": "bltb9cd165941b883ad",
+              "_content_type_uid": "blog_article"
+            }
+          ]
+        }
+      },
+      {
+        "text_and_image": {
+          "image": {
+            "uid": "am7ef4cbef7d463b0e",
+            "filename": "rp_jacket.avif",
+            "title": "rp_jacket.avif"
+          },
+          "_metadata": {
+            "uid": "csd958e524cec95b8e"
+          },
+          "image_right": false,
+          "eyebrow_text": "Our Story",
+          "headline": "Pedaling Through Generations.",
+          "body": "What started as a small bike shop in the Netherlands has grown into a global community of riders. For over 50 years, we've believed in the simple power of a bike to create brighter, healthier, more connected lives.",
+          "button_text": "Our Story",
+          "background_color": "Warm Eggshell",
+          "background_image": {
+            "uid": "am559b17ac055181bf",
+            "filename": "windmill.avif",
+            "title": "windmill.avif"
+          },
+          "page": [
+            {
+              "uid": "blta1345c14d3fa0a97",
+              "_content_type_uid": "page"
+            }
+          ],
+          "text_white": false
+        }
+      },
+      {
+        "newsletter_signup": {
+          "title": "Join the Ride.",
+          "_metadata": {
+            "uid": "cs1fe1a4ca4405a128"
+          },
+          "placeholder": "Your email",
+          "button_text": "Sign Up",
+          "background_color": "White"
+        }
+      }
+    ],
+    "tags": [],
+    "locale": "en",
+    "uid": "blt92af9a13ce5f6a6b",
+    "url": "/"
+  },
+  "publish_environments": [
+    "development",
+    "dev",
+    "preview"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "taxonomy": {
+    "uid": "article",
+    "name": "Article topics",
+    "description": "What an article is about. Terms match the Lytics content topics used for audiences and personalization."
+  },
+  "terms": [
+    {
+      "uid": "stories",
+      "name": "Stories",
+      "parent_uid": null,
+      "order": null
+    },
+    {
+      "uid": "accessories",
+      "name": "Accessories",
+      "parent_uid": null,
+      "order": null
+    },
+    {
+      "uid": "roam",
+      "name": "Roam",
+      "parent_uid": null,
+      "order": null
+    },
+    {
+      "uid": "warranty",
+      "name": "Warranty",
+      "parent_uid": null,
+      "order": null
+    },
+    {
+      "uid": "range",
+      "name": "Range",
+      "parent_uid": null,
+      "order": null
+    },
+    {
+      "uid": "battery",
+      "name": "Battery",
+      "parent_uid": null,
+      "order": null
+    },
+    {
+      "uid": "e_bikes",
+      "name": "E-Bikes",
+      "parent_uid": null,
+      "order": null
+    },
+    {
+      "uid": "exploration",
+      "name": "Exploration",
+      "parent_uid": null,
+      "order": null
+    },
+    {
+      "uid": "city",
+      "name": "City",
+      "parent_uid": null,
+      "order": null
+    },
+    {
+      "uid": "commuting",
+      "name": "Commuting",
+      "parent_uid": null,
+      "order": null
+    }
+  ]
+}

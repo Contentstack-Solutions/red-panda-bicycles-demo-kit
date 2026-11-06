@@ -1,0 +1,16 @@
+{
+  "entry": {
+    "title": "Marken",
+    "blurb": "Former island village of green houses, reached along a dike.",
+    "latitude": 52.4585,
+    "longitude": 5.103,
+    "locale": "en",
+    "uid": "blt5e613c825379eb6c",
+    "tags": []
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "entry": {
+    "title": "E-Bikes Listing Page",
+    "url": "/plp/e-bikes",
+    "modular_blocks": [],
+    "tags": [],
+    "locale": "en",
+    "uid": "blt7246ce7e8605f697"
+  },
+  "publish_environments": [
+    "development",
+    "dev",
+    "preview"
+  ]
+}

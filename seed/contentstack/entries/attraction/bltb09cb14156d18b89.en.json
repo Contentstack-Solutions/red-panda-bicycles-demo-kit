@@ -1,0 +1,16 @@
+{
+  "entry": {
+    "title": "Flevopark",
+    "blurb": "A quiet, leafy loop on the east side that locals love.",
+    "latitude": 52.3602,
+    "longitude": 4.951,
+    "locale": "en",
+    "uid": "bltb09cb14156d18b89",
+    "tags": []
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

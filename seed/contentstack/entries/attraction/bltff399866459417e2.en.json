@@ -1,0 +1,16 @@
+{
+  "entry": {
+    "title": "A'DAM Lookout",
+    "blurb": "Free ferry across the IJ, then swing over the edge 100 m up.",
+    "latitude": 52.3843,
+    "longitude": 4.9021,
+    "locale": "en",
+    "uid": "bltff399866459417e2",
+    "tags": []
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

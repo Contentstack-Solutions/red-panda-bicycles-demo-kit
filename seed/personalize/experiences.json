@@ -1,0 +1,31 @@
+{
+  "experiences": [
+    {
+      "name": "Homepage – Reliability and range",
+      "content_types": ["hero_banner"],
+      "variants": [
+        {
+          "name": "Volt Owners × Commuting",
+          "audience": "volt_owners_commuting",
+          "entry": {
+            "ref": "heroBanner",
+            "content_type": "hero_banner",
+            "fields": {
+              "eyebrow_text": "For riders who've put in the miles",
+              "headline": "Reliability\nand Range\nAbove All.",
+              "description": "The new RP Roam goes further on a charge, and it's built to keep going year after year.",
+              "button_text": "Meet the Roam"
+            },
+            "_change_set": ["eyebrow_text", "headline", "description", "button_text"]
+          }
+        }
+      ]
+    }
+  ],
+  "events": [
+    { "key": "bike_recommendation_clicked", "description": "Visitor clicked a recommended bike" },
+    { "key": "add_to_cart", "description": "Visitor added a product to the cart" },
+    { "key": "checkout_started", "description": "Visitor started checkout" },
+    { "key": "preorder_completed", "description": "Visitor completed a pre-order" }
+  ]
+}

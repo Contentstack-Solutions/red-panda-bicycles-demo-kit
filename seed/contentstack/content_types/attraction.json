@@ -1,0 +1,99 @@
+{
+  "content_type": {
+    "uid": "attraction",
+    "title": "Attraction",
+    "options": {
+      "is_page": false,
+      "singleton": false,
+      "title": "title",
+      "sub_title": []
+    },
+    "schema": [
+      {
+        "mandatory": true,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": true,
+        "data_type": "text",
+        "uid": "title",
+        "display_name": "Name",
+        "field_metadata": {
+          "description": "",
+          "default_value": "",
+          "_default": true
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "blurb",
+        "display_name": "Blurb",
+        "field_metadata": {
+          "description": "One short line shown under the name.",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": true,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "number",
+        "uid": "latitude",
+        "display_name": "Latitude",
+        "field_metadata": {
+          "description": "Decimal degrees, e.g. 52.3731",
+          "default_value": ""
+        }
+      },
+      {
+        "mandatory": true,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "number",
+        "uid": "longitude",
+        "display_name": "Longitude",
+        "field_metadata": {
+          "description": "Decimal degrees, e.g. 4.8926",
+          "default_value": ""
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "file",
+        "uid": "image",
+        "display_name": "Image",
+        "field_metadata": {
+          "description": "",
+          "rich_text_type": "standard",
+          "image": true
+        },
+        "dimension": {
+          "width": {
+            "min": 1,
+            "max": null
+          },
+          "height": {
+            "min": 1,
+            "max": null
+          }
+        }
+      }
+    ]
+  }
+}

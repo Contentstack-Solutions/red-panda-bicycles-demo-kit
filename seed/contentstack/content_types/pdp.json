@@ -1,0 +1,212 @@
+{
+  "content_type": {
+    "uid": "pdp",
+    "title": "PDP",
+    "options": {
+      "is_page": true,
+      "singleton": false,
+      "sub_title": [],
+      "title": "title",
+      "url_pattern": "/pdp/:title",
+      "url_prefix": "/"
+    },
+    "schema": [
+      {
+        "data_type": "text",
+        "display_name": "Title",
+        "field_metadata": {
+          "_default": true
+        },
+        "mandatory": true,
+        "uid": "title",
+        "unique": true,
+        "multiple": false,
+        "non_localizable": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "URL",
+        "uid": "url",
+        "field_metadata": {
+          "_default": true
+        },
+        "multiple": false,
+        "unique": false,
+        "mandatory": false,
+        "non_localizable": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Promo Banner",
+        "uid": "promo_banner",
+        "field_metadata": {
+          "description": "One line of offer text shown in a red strip across the top of the product page. Leave empty to hide the banner.",
+          "default_value": "",
+          "placeholder": "e.g. Trade in your old e-bike and get €400 off Roam"
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "display_name": "Product",
+        "extension_uid": "blt178c6b69dcb0752a",
+        "field_metadata": {
+          "extension": true
+        },
+        "uid": "product",
+        "mandatory": false,
+        "non_localizable": false,
+        "unique": false,
+        "config": {},
+        "multiple": false,
+        "data_type": "json"
+      },
+      {
+        "data_type": "text",
+        "display_name": "Eyebrow Text",
+        "uid": "eyebrow_text",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Product Name",
+        "uid": "product_name",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Price",
+        "uid": "price",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Button Text",
+        "uid": "button_text",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Description",
+        "uid": "description",
+        "field_metadata": {
+          "description": "",
+          "default_value": "",
+          "multiline": true
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "file",
+        "display_name": "Images",
+        "uid": "images",
+        "field_metadata": {
+          "description": "",
+          "rich_text_type": "standard",
+          "image": true,
+          "isTitle": false
+        },
+        "mandatory": false,
+        "multiple": true,
+        "non_localizable": false,
+        "unique": false,
+        "dimension": {
+          "width": {
+            "min": null,
+            "max": null
+          },
+          "height": {
+            "min": null,
+            "max": null
+          }
+        }
+      },
+      {
+        "data_type": "group",
+        "display_name": "Recommended Accessories",
+        "uid": "recommended_accessories",
+        "field_metadata": {
+          "description": "Accessories shown in the \"Recommended Accessories\" carousel at the bottom of the product page, in this order. Leave empty to hide it.",
+          "instruction": ""
+        },
+        "schema": [
+          {
+            "display_name": "Product",
+            "uid": "product_item",
+            "extension_uid": "blt178c6b69dcb0752a",
+            "field_metadata": {
+              "extension": true
+            },
+            "config": {},
+            "data_type": "json",
+            "mandatory": false,
+            "multiple": false,
+            "non_localizable": false,
+            "unique": false
+          }
+        ],
+        "mandatory": false,
+        "multiple": true,
+        "non_localizable": false,
+        "unique": false
+      }
+    ]
+  }
+}

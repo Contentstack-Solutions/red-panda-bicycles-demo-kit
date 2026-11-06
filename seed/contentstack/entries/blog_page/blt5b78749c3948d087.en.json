@@ -1,0 +1,14 @@
+{
+  "entry": {
+    "title": "Blog",
+    "eyebrow_text": "The Journal",
+    "headline": "Stories from the saddle.",
+    "intro": "Day trips, rider diaries and hard-won tips from the people who build, fix and ride Red Pandas every day.",
+    "locale": "en",
+    "uid": "blt5b78749c3948d087",
+    "tags": []
+  },
+  "publish_environments": [
+    "preview"
+  ]
+}

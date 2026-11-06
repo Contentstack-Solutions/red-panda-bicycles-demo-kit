@@ -1,0 +1,22 @@
+{
+  "api_whitelist_fields": [
+    "_id",
+    "_uid",
+    "lytics_content",
+    "score_consistency",
+    "score_frequency",
+    "score_intensity",
+    "score_maturity",
+    "score_momentum",
+    "score_propensity",
+    "score_quantity",
+    "score_recency",
+    "score_volatility",
+    "products_owned",
+    "club_membership",
+    "recommended_bike",
+    "trade_in",
+    "volt_review_text",
+    "segment_prediction_percentile"
+  ]
+}

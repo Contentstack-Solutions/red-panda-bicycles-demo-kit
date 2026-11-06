@@ -1,0 +1,16 @@
+{
+  "entry": {
+    "title": "NDSM Wharf",
+    "blurb": "Street art and shipyard cool, a short ferry hop north.",
+    "latitude": 52.401,
+    "longitude": 4.8917,
+    "locale": "en",
+    "uid": "blta6d86fd489734ac8",
+    "tags": []
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

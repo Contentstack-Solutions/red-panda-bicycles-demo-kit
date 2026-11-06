@@ -1,0 +1,104 @@
+{
+  "global_field": {
+    "uid": "article_previews",
+    "title": "Article Previews",
+    "schema": [
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "eyebrow_text",
+        "display_name": "Eyebrow",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "title",
+        "display_name": "Title",
+        "field_metadata": {
+          "description": "End with . ! or ? to get the accent colour.",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "link_text",
+        "display_name": "Link text",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "data_type": "text",
+        "display_name": "Background Color",
+        "display_type": "dropdown",
+        "enum": {
+          "advanced": false,
+          "choices": [
+            {
+              "value": "White"
+            },
+            {
+              "value": "Warm Eggshell"
+            },
+            {
+              "value": "Blue Gray"
+            }
+          ]
+        },
+        "multiple": false,
+        "uid": "background_color",
+        "field_metadata": {
+          "description": "",
+          "default_value": "White"
+        },
+        "mandatory": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "reference",
+        "uid": "articles",
+        "display_name": "Articles",
+        "reference_to": [
+          "blog_article"
+        ],
+        "field_metadata": {
+          "ref_multiple": true,
+          "ref_multiple_content_types": true,
+          "description": "Fallback only. The module automatically shows the 3 most recently published articles (by Publish Date); these picks are used only if that list can't be loaded."
+        }
+      }
+    ]
+  }
+}

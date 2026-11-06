@@ -1,0 +1,52 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files
+.env
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# local content backups
+.backups/
+
+# Lytics seeding run state (sent batches)
+scripts/lytics/.state/
+
+# build output
+/dist/
+
+# demo kit state and caches
+.kit/
+seed/.cache/
+# the snapshot export's temporary folder (swapped in on success)
+seed/contentstack.tmp-*
+
+# source stack keys for the maintainer export (never commit)
+.env.source

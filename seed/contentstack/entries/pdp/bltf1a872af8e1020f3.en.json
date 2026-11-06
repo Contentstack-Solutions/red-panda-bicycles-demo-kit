@@ -1,0 +1,85 @@
+{
+  "entry": {
+    "title": "The Jordaan",
+    "eyebrow_text": "",
+    "product_name": "",
+    "price": "",
+    "button_text": "",
+    "description": "",
+    "tags": [],
+    "locale": "en",
+    "uid": "bltf1a872af8e1020f3",
+    "url": "/pdp/the-jordaan",
+    "product": {
+      "selectedIds": [
+        "31cc0bce-070e-4d34-9e39-7c15d944f5a3"
+      ],
+      "items": [
+        {
+          "id": "31cc0bce-070e-4d34-9e39-7c15d944f5a3",
+          "name": "The Jordaan",
+          "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/category-images/city_bike.avif",
+          "media": [
+            {
+              "id": 55244,
+              "name": "city_bike.avif",
+              "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/category-images/city_bike.avif",
+              "type": "image",
+              "ordernum": 0,
+              "language_id": 875,
+              "locale": "en",
+              "language_name": "English",
+              "is_default_language": true
+            },
+            {
+              "id": 55245,
+              "name": "jordaan1.avif",
+              "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/jordaan1.avif",
+              "type": "image",
+              "ordernum": 1,
+              "language_id": 875,
+              "locale": "en",
+              "language_name": "English",
+              "is_default_language": true
+            },
+            {
+              "id": 55246,
+              "name": "jordaan2.avif",
+              "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/jordaan2.avif",
+              "type": "image",
+              "ordernum": 2,
+              "language_id": 875,
+              "locale": "en",
+              "language_name": "English",
+              "is_default_language": true
+            },
+            {
+              "id": 55247,
+              "name": "jordaan3.avif",
+              "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/jordaan3.avif",
+              "type": "image",
+              "ordernum": 3,
+              "language_id": 875,
+              "locale": "en",
+              "language_name": "English",
+              "is_default_language": true
+            }
+          ],
+          "url": "the-jordaan",
+          "brand": "Red Panda",
+          "description": "<p>Classic Dutch style, made for everyday city life. The Jordaan pairs an upright, comfortable ride with timeless details for commutes, coffee runs, and wherever the day takes you.</p>",
+          "productType": "single",
+          "price": 499,
+          "currency_code": "EUR",
+          "currency_symbol": "€",
+          "locale": "en"
+        }
+      ]
+    },
+    "images": []
+  },
+  "publish_environments": [
+    "development",
+    "preview"
+  ]
+}

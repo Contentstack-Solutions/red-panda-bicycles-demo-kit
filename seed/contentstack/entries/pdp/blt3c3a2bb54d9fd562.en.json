@@ -1,0 +1,56 @@
+{
+  "entry": {
+    "title": "Commuter Pannier",
+    "url": "/pdp/commuter-pannier",
+    "promo_banner": "",
+    "product": {
+      "selectedIds": [
+        "10d3dcff-29cb-47b8-801a-8cfae8a428e7"
+      ],
+      "items": [
+        {
+          "id": "10d3dcff-29cb-47b8-801a-8cfae8a428e7",
+          "name": "Commuter Pannier 20L",
+          "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/pannier.avif",
+          "media": [
+            {
+              "id": 55566,
+              "name": "pannier.avif",
+              "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/pannier.avif",
+              "type": "image",
+              "ordernum": 0,
+              "language_id": 875,
+              "locale": "en",
+              "language_name": "English",
+              "is_default_language": true
+            }
+          ],
+          "url": "commuter-pannier-20l",
+          "brand": "Red Panda",
+          "description": "<p>Carry the day without carrying a backpack. This weather-resistant 20-liter pannier clips securely to your rear rack with room for work essentials, groceries, or an extra layer.</p>",
+          "productType": "single",
+          "price": 99,
+          "currency_code": "EUR",
+          "currency_symbol": "€",
+          "locale": "en"
+        }
+      ]
+    },
+    "eyebrow_text": "Saddlebag",
+    "product_name": "Commuter Pannier",
+    "price": "",
+    "button_text": "",
+    "description": "",
+    "images": [],
+    "tags": [
+      "accessory"
+    ],
+    "locale": "en",
+    "uid": "blt3c3a2bb54d9fd562"
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

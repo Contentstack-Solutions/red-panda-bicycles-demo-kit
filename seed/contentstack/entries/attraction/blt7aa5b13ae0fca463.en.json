@@ -1,0 +1,16 @@
+{
+  "entry": {
+    "title": "Zaanse Schans",
+    "blurb": "Working windmills and wooden houses on the Zaan.",
+    "latitude": 52.474,
+    "longitude": 4.8175,
+    "locale": "en",
+    "uid": "blt7aa5b13ae0fca463",
+    "tags": []
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

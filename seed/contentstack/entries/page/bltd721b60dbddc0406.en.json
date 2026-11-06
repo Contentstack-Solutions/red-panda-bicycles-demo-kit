@@ -1,0 +1,463 @@
+{
+  "entry": {
+    "title": "Explore our e-bikes",
+    "url": "/page/explore-our-e-bikes",
+    "hero": [
+      {
+        "uid": "bltaef8fc63b4171f82",
+        "_content_type_uid": "hero_banner"
+      }
+    ],
+    "modular_blocks": [
+      {
+        "product_banner": {
+          "eyebrow_text": "THE E-BIKES COLLECTION",
+          "_metadata": {
+            "uid": "cs75d6aaa0085d8fa8"
+          },
+          "title": "Built for wherever curiosity takes you",
+          "link_text": "View all e-bikes",
+          "link_page": [
+            {
+              "uid": "blt7246ce7e8605f697",
+              "_content_type_uid": "e_bikes"
+            }
+          ],
+          "products": [
+            {
+              "product_item": {
+                "selectedIds": [
+                  "51e5998d-08bc-42f8-98df-ad2f82fd1334"
+                ],
+                "items": [
+                  {
+                    "id": "51e5998d-08bc-42f8-98df-ad2f82fd1334",
+                    "name": "Red Panda Volt Trail E-MTB",
+                    "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/Screenshot-2026-09-23-at-8.39.24-PM.png",
+                    "media": [
+                      {
+                        "id": 55214,
+                        "name": "Screenshot-2026-09-23-at-8.39.24-PM.png",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/Screenshot-2026-09-23-at-8.39.24-PM.png",
+                        "type": "image",
+                        "ordernum": 0,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      },
+                      {
+                        "id": 55215,
+                        "name": "Red Panda Volt Trail E-MTB – Full profile",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/bikes/rp-eb-002-view-1.jpg",
+                        "type": "image",
+                        "ordernum": 1,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      },
+                      {
+                        "id": 55216,
+                        "name": "Red Panda Volt Trail E-MTB – Full profile (alternate)",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/bikes/rp-eb-002-view-2.jpg",
+                        "type": "image",
+                        "ordernum": 2,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      },
+                      {
+                        "id": 55217,
+                        "name": "Red Panda Volt Trail E-MTB – Cockpit & front end",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/bikes/rp-eb-002-view-3.jpg",
+                        "type": "image",
+                        "ordernum": 3,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      },
+                      {
+                        "id": 55218,
+                        "name": "Red Panda Volt Trail E-MTB – Drivetrain & rear",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/bikes/rp-eb-002-view-4.jpg",
+                        "type": "image",
+                        "ordernum": 4,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      }
+                    ],
+                    "url": "volt-trail-e-mtb",
+                    "brand": "Red Panda",
+                    "description": "<p>150mm full-suspension e-MTB with 85Nm motor and 720Wh battery for bigger days on the trail.</p>",
+                    "productType": "single",
+                    "price": 4999,
+                    "currency_code": "USD",
+                    "currency_symbol": "$",
+                    "locale": "en"
+                  }
+                ]
+              },
+              "_metadata": {
+                "uid": "cse2800d035b6c9ffd"
+              },
+              "image": null,
+              "title": "The Explorer",
+              "description": "Go further. See More.",
+              "badge": "",
+              "features": [
+                {
+                  "item": [
+                    {
+                      "icon": {
+                        "uid": "amcca0b92424bd0f52",
+                        "filename": "Screenshot_2026-09-23_at_8.59.12_PM.png",
+                        "title": "Screenshot 2026-09-23 at 8.59.12 PM.png"
+                      },
+                      "_metadata": {
+                        "uid": "cs55d56df766b355ed"
+                      },
+                      "title": "Up to 80 miles"
+                    },
+                    {
+                      "icon": {
+                        "uid": "am0cfcce2e669220f4",
+                        "filename": "Screenshot_2026-09-23_at_8.59.16_PM.png",
+                        "title": "Screenshot 2026-09-23 at 8.59.16 PM.png"
+                      },
+                      "_metadata": {
+                        "uid": "cs766373788c745d9b"
+                      },
+                      "title": "City + trail ready"
+                    },
+                    {
+                      "icon": {
+                        "uid": "am2ceed665a0c2c6fe",
+                        "filename": "Screenshot_2026-09-23_at_8.59.20_PM.png",
+                        "title": "Screenshot 2026-09-23 at 8.59.20 PM.png"
+                      },
+                      "_metadata": {
+                        "uid": "cs9b45a855a9806dda"
+                      },
+                      "title": "Smooth & powerful"
+                    }
+                  ],
+                  "_metadata": {
+                    "uid": "cs4abb77b24a119517"
+                  }
+                }
+              ]
+            },
+            {
+              "product_item": {
+                "selectedIds": [
+                  "c28dce10-ff52-4f21-8cc3-6b8a02fbb162"
+                ],
+                "items": [
+                  {
+                    "id": "c28dce10-ff52-4f21-8cc3-6b8a02fbb162",
+                    "name": "Red Panda Cargo Cub E-Cargo Bike",
+                    "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/Screenshot-2026-09-23-at-8.39.30-PM.png",
+                    "media": [
+                      {
+                        "id": 55219,
+                        "name": "Screenshot-2026-09-23-at-8.39.30-PM.png",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/Screenshot-2026-09-23-at-8.39.30-PM.png",
+                        "type": "image",
+                        "ordernum": 0,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      },
+                      {
+                        "id": 55220,
+                        "name": "Red Panda Cargo Cub E-Cargo Bike – Full profile",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/bikes/rp-eb-003-view-1.jpg",
+                        "type": "image",
+                        "ordernum": 1,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      },
+                      {
+                        "id": 55221,
+                        "name": "Red Panda Cargo Cub E-Cargo Bike – Full profile (alternate)",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/bikes/rp-eb-003-view-2.jpg",
+                        "type": "image",
+                        "ordernum": 2,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      },
+                      {
+                        "id": 55222,
+                        "name": "Red Panda Cargo Cub E-Cargo Bike – Cockpit & front end",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/bikes/rp-eb-003-view-3.jpg",
+                        "type": "image",
+                        "ordernum": 3,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      },
+                      {
+                        "id": 55223,
+                        "name": "Red Panda Cargo Cub E-Cargo Bike – Drivetrain & rear",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/bikes/rp-eb-003-view-4.jpg",
+                        "type": "image",
+                        "ordernum": 4,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      }
+                    ],
+                    "url": "cargo-cub-e-cargo-bike",
+                    "brand": "Red Panda",
+                    "description": "<p>Long-tail electric cargo bike that carries two kids or 80 kg of groceries. Car-free living made easy.</p>",
+                    "productType": "single",
+                    "price": 3799,
+                    "currency_code": "USD",
+                    "currency_symbol": "$",
+                    "locale": "en"
+                  }
+                ]
+              },
+              "_metadata": {
+                "uid": "cs6eb7d6a1a4fe5932"
+              },
+              "image": null,
+              "title": "The Family",
+              "description": "For life's bigger plans.",
+              "badge": "",
+              "features": [
+                {
+                  "item": [
+                    {
+                      "icon": {
+                        "uid": "amcca0b92424bd0f52",
+                        "filename": "Screenshot_2026-09-23_at_8.59.12_PM.png",
+                        "title": "Screenshot 2026-09-23 at 8.59.12 PM.png"
+                      },
+                      "_metadata": {
+                        "uid": "cs96ec88d59654263d"
+                      },
+                      "title": "Up to 70 miles"
+                    },
+                    {
+                      "icon": {
+                        "uid": "am10e6cead2b80c178",
+                        "filename": "Screenshot_2026-09-23_at_8.59.24_PM.png",
+                        "title": "Screenshot 2026-09-23 at 8.59.24 PM.png"
+                      },
+                      "_metadata": {
+                        "uid": "cs1a2f76ef5485a6d4"
+                      },
+                      "title": "Room for what matters"
+                    },
+                    {
+                      "icon": {
+                        "uid": "am2ceed665a0c2c6fe",
+                        "filename": "Screenshot_2026-09-23_at_8.59.20_PM.png",
+                        "title": "Screenshot 2026-09-23 at 8.59.20 PM.png"
+                      },
+                      "_metadata": {
+                        "uid": "csee41f51477b944c2"
+                      },
+                      "title": "Stable & confident"
+                    }
+                  ],
+                  "_metadata": {
+                    "uid": "cscd0e3a9c854da9c8"
+                  }
+                }
+              ]
+            },
+            {
+              "product_item": {
+                "selectedIds": [
+                  "c261d1a2-fdb1-444a-bbea-d1e77fd5f02d"
+                ],
+                "items": [
+                  {
+                    "id": "c261d1a2-fdb1-444a-bbea-d1e77fd5f02d",
+                    "name": "Red Panda Glide E-Commuter",
+                    "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/Screenshot-2026-09-23-at-8.39.36-PM.png",
+                    "media": [
+                      {
+                        "id": 55224,
+                        "name": "Screenshot-2026-09-23-at-8.39.36-PM.png",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/Screenshot-2026-09-23-at-8.39.36-PM.png",
+                        "type": "image",
+                        "ordernum": 0,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      },
+                      {
+                        "id": 55225,
+                        "name": "Red Panda Glide E-Commuter – Full profile",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/bikes/rp-eb-001-view-1.jpg",
+                        "type": "image",
+                        "ordernum": 1,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      },
+                      {
+                        "id": 55226,
+                        "name": "Red Panda Glide E-Commuter – Full profile (alternate)",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/bikes/rp-eb-001-view-2.jpg",
+                        "type": "image",
+                        "ordernum": 2,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      },
+                      {
+                        "id": 55227,
+                        "name": "Red Panda Glide E-Commuter – Cockpit & front end",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/bikes/rp-eb-001-view-3.jpg",
+                        "type": "image",
+                        "ordernum": 3,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      },
+                      {
+                        "id": 55228,
+                        "name": "Red Panda Glide E-Commuter – Drivetrain & rear",
+                        "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/bikes/rp-eb-001-view-4.jpg",
+                        "type": "image",
+                        "ordernum": 4,
+                        "language_id": 875,
+                        "locale": "en",
+                        "language_name": "English",
+                        "is_default_language": true
+                      }
+                    ],
+                    "url": "glide-e-commuter",
+                    "brand": "Red Panda",
+                    "description": "<p>Mid-drive 250W motor, 500Wh integrated battery with up to 120 km range, integrated lights, fenders and rack.</p>",
+                    "productType": "single",
+                    "price": 2299,
+                    "currency_code": "USD",
+                    "currency_symbol": "$",
+                    "locale": "en"
+                  }
+                ]
+              },
+              "_metadata": {
+                "uid": "cs162a8ea9d1620d23"
+              },
+              "image": null,
+              "title": "The Commuter",
+              "description": "A better way to every day.",
+              "badge": "",
+              "features": [
+                {
+                  "item": [
+                    {
+                      "icon": {
+                        "uid": "amcca0b92424bd0f52",
+                        "filename": "Screenshot_2026-09-23_at_8.59.12_PM.png",
+                        "title": "Screenshot 2026-09-23 at 8.59.12 PM.png"
+                      },
+                      "_metadata": {
+                        "uid": "cs64e40f595fc374e3"
+                      },
+                      "title": "Up to 60 miles"
+                    },
+                    {
+                      "icon": {
+                        "uid": "amd5bf8cb60b45cbcc",
+                        "filename": "Screenshot_2026-09-23_at_8.59.32_PM.png",
+                        "title": "Screenshot 2026-09-23 at 8.59.32 PM.png"
+                      },
+                      "_metadata": {
+                        "uid": "csec5b84ed38a72786"
+                      },
+                      "title": "Fast, smooth, and agile"
+                    },
+                    {
+                      "icon": {
+                        "uid": "am4448e2a0b94d892a",
+                        "filename": "Screenshot_2026-09-23_at_8.59.36_PM.png",
+                        "title": "Screenshot 2026-09-23 at 8.59.36 PM.png"
+                      },
+                      "_metadata": {
+                        "uid": "cs404c184bb49e145e"
+                      },
+                      "title": "Designed for the city"
+                    }
+                  ],
+                  "_metadata": {
+                    "uid": "cs494996c17707f25f"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "text_and_image": {
+          "image": {
+            "uid": "am8d1b652867a8f1fa",
+            "filename": "country_ride_square.avif",
+            "title": "country_ride_square.avif"
+          },
+          "_metadata": {
+            "uid": "cs8554885423df2445"
+          },
+          "image_right": false,
+          "eyebrow_text": "A CLEANER TOMORROW",
+          "headline": "More than a ride. A brighter world.",
+          "body": "We believe bikes can change more than your day. They can create cleaner cities, healthier people, and a more connected tomorrow.",
+          "button_text": "Our Impact ",
+          "background_image": {
+            "uid": "am7a8fc0e36f26b666",
+            "filename": "windmill_text_safe.svg",
+            "title": "windmill_text_safe.svg"
+          },
+          "page": [
+            {
+              "uid": "bltd721b60dbddc0406",
+              "_content_type_uid": "page"
+            }
+          ],
+          "text_white": true
+        }
+      },
+      {
+        "newsletter_signup": {
+          "title": "Join the Ride.",
+          "_metadata": {
+            "uid": "cs2ac94e8cf311549d"
+          },
+          "placeholder": "Your email",
+          "button_text": "Sign Up"
+        }
+      }
+    ],
+    "tags": [],
+    "locale": "en",
+    "uid": "bltd721b60dbddc0406"
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

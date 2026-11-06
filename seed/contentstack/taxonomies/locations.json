@@ -1,0 +1,57 @@
+{
+  "taxonomy": {
+    "uid": "locations",
+    "name": "Locations",
+    "description": "Where an article or ride takes place: Amsterdam areas and nearby day-trip regions."
+  },
+  "terms": [
+    {
+      "uid": "around_amsterdam",
+      "name": "Around Amsterdam",
+      "parent_uid": null,
+      "order": null
+    },
+    {
+      "uid": "amsterdam",
+      "name": "Amsterdam",
+      "parent_uid": null,
+      "order": null
+    },
+    {
+      "uid": "north_sea_coast",
+      "name": "North Sea coast",
+      "parent_uid": "around_amsterdam",
+      "order": null
+    },
+    {
+      "uid": "amsterdamse_bos",
+      "name": "Amsterdamse Bos",
+      "parent_uid": "around_amsterdam",
+      "order": null
+    },
+    {
+      "uid": "zaan_region",
+      "name": "Zaan region",
+      "parent_uid": "around_amsterdam",
+      "order": null
+    },
+    {
+      "uid": "waterland",
+      "name": "Waterland",
+      "parent_uid": "around_amsterdam",
+      "order": null
+    },
+    {
+      "uid": "ij_and_noord",
+      "name": "IJ and Noord",
+      "parent_uid": "amsterdam",
+      "order": null
+    },
+    {
+      "uid": "amstel",
+      "name": "Amstel",
+      "parent_uid": "amsterdam",
+      "order": null
+    }
+  ]
+}

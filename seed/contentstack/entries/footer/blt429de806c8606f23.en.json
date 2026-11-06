@@ -1,0 +1,87 @@
+{
+  "entry": {
+    "title": "Footer",
+    "name": "Red Panda Bicycles",
+    "tagline": "GOOD RIDES SINCE 1974",
+    "link_columns": [
+      {
+        "column": [
+          {
+            "text": "Bikes",
+            "page": [],
+            "_metadata": {
+              "uid": "csf49c4d1f53bb72d2"
+            }
+          },
+          {
+            "text": "Accessories",
+            "page": [],
+            "_metadata": {
+              "uid": "cs458c5b731a319fe5"
+            }
+          },
+          {
+            "text": "Our Story",
+            "page": [],
+            "_metadata": {
+              "uid": "cs7e3a2f21078b9c5c"
+            }
+          },
+          {
+            "text": "Support",
+            "page": [],
+            "_metadata": {
+              "uid": "cs83c70afe745ef20e"
+            }
+          }
+        ],
+        "_metadata": {
+          "uid": "csde036914618e600d"
+        }
+      },
+      {
+        "column": [
+          {
+            "text": "Dealers",
+            "page": [],
+            "_metadata": {
+              "uid": "cseb47b30cb1c9b67c"
+            }
+          },
+          {
+            "text": "Sustainability",
+            "page": [],
+            "_metadata": {
+              "uid": "cs355130f56dabb8c6"
+            }
+          },
+          {
+            "text": "Contact",
+            "page": [],
+            "_metadata": {
+              "uid": "cs96b438c7df70da07"
+            }
+          },
+          {
+            "text": "Careers",
+            "page": [],
+            "_metadata": {
+              "uid": "cs746b324cce47aa5f"
+            }
+          }
+        ],
+        "_metadata": {
+          "uid": "csb806dc7d14fd5c26"
+        }
+      }
+    ],
+    "social_label": "Follow along",
+    "tags": [],
+    "locale": "en",
+    "uid": "blt429de806c8606f23"
+  },
+  "publish_environments": [
+    "dev",
+    "preview"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entry": {
+    "title": "Bikes",
+    "url": "/plp/bikes",
+    "modular_blocks": [],
+    "tags": [],
+    "locale": "en",
+    "uid": "bltde7b62f4aefc327a",
+    "hero": {
+      "description": "Every Red Panda bike, from carbon road racers to trail-ready mountain bikes and everyday e-bikes.",
+      "headline": "All Bikes",
+      "image": null
+    }
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

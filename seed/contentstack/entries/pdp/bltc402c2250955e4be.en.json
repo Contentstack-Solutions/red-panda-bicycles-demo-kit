@@ -1,0 +1,176 @@
+{
+  "entry": {
+    "title": "Roam Explorer",
+    "url": "/pdp/roam-e-bike",
+    "product": {
+      "selectedIds": [
+        "51e5998d-08bc-42f8-98df-ad2f82fd1334"
+      ],
+      "items": [
+        {
+          "id": "51e5998d-08bc-42f8-98df-ad2f82fd1334",
+          "name": "Volt Trail E-MTB",
+          "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/explorer.avif",
+          "media": [
+            {
+              "id": 55229,
+              "name": "explorer.avif",
+              "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/explorer.avif",
+              "type": "image",
+              "ordernum": 0,
+              "language_id": 875,
+              "locale": "en",
+              "language_name": "English",
+              "is_default_language": true
+            },
+            {
+              "id": 55230,
+              "name": "explorer1.avif",
+              "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/explorer1.avif",
+              "type": "image",
+              "ordernum": 1,
+              "language_id": 875,
+              "locale": "en",
+              "language_name": "English",
+              "is_default_language": true
+            },
+            {
+              "id": 55231,
+              "name": "explorer2.avif",
+              "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/explorer2.avif",
+              "type": "image",
+              "ordernum": 2,
+              "language_id": 875,
+              "locale": "en",
+              "language_name": "English",
+              "is_default_language": true
+            },
+            {
+              "id": 55232,
+              "name": "explorer3.avif",
+              "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/explorer3.avif",
+              "type": "image",
+              "ordernum": 3,
+              "language_id": 875,
+              "locale": "en",
+              "language_name": "English",
+              "is_default_language": true
+            },
+            {
+              "id": 55233,
+              "name": "explorer4.avif",
+              "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/Product-Images/explorer4.avif",
+              "type": "image",
+              "ordernum": 4,
+              "language_id": 875,
+              "locale": "en",
+              "language_name": "English",
+              "is_default_language": true
+            }
+          ],
+          "url": "volt-trail-e-mtb",
+          "brand": "Red Panda",
+          "description": "<p>150mm full-suspension e-MTB with 85Nm motor and 720Wh battery for bigger days on the trail.</p>",
+          "productType": "single",
+          "price": 4999,
+          "currency_code": "EUR",
+          "currency_symbol": "€",
+          "locale": "en"
+        }
+      ]
+    },
+    "eyebrow_text": "promo",
+    "product_name": "Roam Explorer",
+    "price": "",
+    "button_text": "Pre-order",
+    "description": "",
+    "images": [],
+    "tags": [],
+    "locale": "en",
+    "uid": "bltc402c2250955e4be",
+    "promo_banner": "€500 off with trade-in • 50% off saddlebags when you preorder.",
+    "recommended_accessories": [
+      {
+        "product_item": {
+          "selectedIds": [
+            "10d3dcff-29cb-47b8-801a-8cfae8a428e7"
+          ],
+          "items": [
+            {
+              "id": "10d3dcff-29cb-47b8-801a-8cfae8a428e7",
+              "name": "Commuter Pannier 20L",
+              "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/pannier.avif",
+              "media": [
+                {
+                  "id": 55566,
+                  "name": "pannier.avif",
+                  "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/pannier.avif",
+                  "type": "image",
+                  "ordernum": 0,
+                  "language_id": 875,
+                  "locale": "en",
+                  "language_name": "English",
+                  "is_default_language": true
+                }
+              ],
+              "url": "commuter-pannier-20l",
+              "brand": "Red Panda",
+              "description": "<p>Carry the day without carrying a backpack. This weather-resistant 20-liter pannier clips securely to your rear rack with room for work essentials, groceries, or an extra layer.</p>",
+              "productType": "single",
+              "price": 99,
+              "currency_code": "EUR",
+              "currency_symbol": "€",
+              "locale": "en"
+            }
+          ]
+        },
+        "_metadata": {
+          "uid": "cs208542f54756b659"
+        }
+      },
+      {
+        "product_item": {
+          "selectedIds": [
+            "ae341bdb-a269-4b9d-9e46-6d1c4026c91c"
+          ],
+          "items": [
+            {
+              "id": "ae341bdb-a269-4b9d-9e46-6d1c4026c91c",
+              "name": "Fortress U-Lock",
+              "image": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/lock.avif",
+              "media": [
+                {
+                  "id": 55564,
+                  "name": "lock.avif",
+                  "path": "https://wtxrbukgejhzplfwzamn.supabase.co/storage/v1/object/public/fb266d86-e8d9-4492-9f4b-ebf286e7b006/dcd94f8e-6e80-4048-8ab1-463d15cf2e57/products/lock.avif",
+                  "type": "image",
+                  "ordernum": 0,
+                  "language_id": 875,
+                  "locale": "en",
+                  "language_name": "English",
+                  "is_default_language": true
+                }
+              ],
+              "url": "fortress-u-lock",
+              "brand": "Red Panda",
+              "description": "<p>Serious security without the bulk. Hardened steel construction and a compact design make the Fortress an easy everyday companion for city stops and daily commutes.</p>",
+              "productType": "single",
+              "price": 79,
+              "currency_code": "EUR",
+              "currency_symbol": "€",
+              "locale": "en"
+            }
+          ]
+        },
+        "_metadata": {
+          "uid": "csbc89733ae7d6c8c2"
+        }
+      }
+    ]
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

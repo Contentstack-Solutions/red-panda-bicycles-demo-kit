@@ -1,0 +1,16 @@
+{
+  "entry": {
+    "title": "Rijksmuseum",
+    "blurb": "Ride straight through the famous cycle tunnel under the museum.",
+    "latitude": 52.36,
+    "longitude": 4.8852,
+    "locale": "en",
+    "uid": "blt75caacca92866ce3",
+    "tags": []
+  },
+  "publish_environments": [
+    "dev",
+    "development",
+    "preview"
+  ]
+}

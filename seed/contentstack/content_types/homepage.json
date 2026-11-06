@@ -1,0 +1,106 @@
+{
+  "content_type": {
+    "uid": "homepage",
+    "title": "Homepage",
+    "options": {
+      "is_page": true,
+      "singleton": false,
+      "sub_title": [],
+      "title": "title",
+      "url_pattern": "/",
+      "url_prefix": "/"
+    },
+    "schema": [
+      {
+        "data_type": "text",
+        "display_name": "Title",
+        "field_metadata": {
+          "_default": true
+        },
+        "mandatory": true,
+        "uid": "title",
+        "unique": true,
+        "multiple": false,
+        "non_localizable": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "URL",
+        "uid": "url",
+        "field_metadata": {
+          "_default": true
+        },
+        "multiple": false,
+        "unique": false,
+        "mandatory": false,
+        "non_localizable": false
+      },
+      {
+        "data_type": "reference",
+        "display_name": "Hero",
+        "reference_to": [
+          "hero_banner"
+        ],
+        "field_metadata": {
+          "ref_multiple": false,
+          "ref_multiple_content_types": true
+        },
+        "uid": "hero",
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "blocks",
+        "display_name": "Modular Blocks",
+        "blocks": [
+          {
+            "title": "Product Banner",
+            "uid": "product_banner",
+            "reference_to": "product_banner"
+          },
+          {
+            "title": "Trust Strip",
+            "uid": "trust_strip",
+            "reference_to": "trust_strip"
+          },
+          {
+            "title": "Text and Image",
+            "uid": "text_and_image",
+            "reference_to": "text_and_image"
+          },
+          {
+            "title": "Newsletter Signup",
+            "uid": "newsletter_signup",
+            "reference_to": "newsletter_signup"
+          },
+          {
+            "title": "Trip Planner",
+            "uid": "trip_planner",
+            "reference_to": "trip_planner"
+          },
+          {
+            "title": "Category Banner",
+            "uid": "category_banner",
+            "reference_to": "category_banner"
+          },
+          {
+            "title": "Article Previews",
+            "uid": "article_previews",
+            "reference_to": "article_previews"
+          }
+        ],
+        "multiple": true,
+        "uid": "modular_blocks",
+        "field_metadata": {
+          "instruction": "",
+          "description": ""
+        },
+        "mandatory": false,
+        "non_localizable": false,
+        "unique": false
+      }
+    ]
+  }
+}

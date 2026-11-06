@@ -1,0 +1,292 @@
+{
+  "global_field": {
+    "uid": "trip_planner",
+    "title": "Trip Planner",
+    "schema": [
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "eyebrow_text",
+        "display_name": "Eyebrow",
+        "field_metadata": {
+          "description": "",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "title",
+        "display_name": "Title",
+        "field_metadata": {
+          "description": "End with . ! or ? to get the accent colour.",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "intro",
+        "display_name": "Intro",
+        "field_metadata": {
+          "description": "",
+          "default_value": "",
+          "multiline": true
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "data_type": "text",
+        "display_name": "Background Color",
+        "display_type": "dropdown",
+        "enum": {
+          "advanced": false,
+          "choices": [
+            {
+              "value": "White"
+            },
+            {
+              "value": "Warm Eggshell"
+            },
+            {
+              "value": "Blue Gray"
+            }
+          ]
+        },
+        "multiple": false,
+        "uid": "background_color",
+        "field_metadata": {
+          "description": "",
+          "default_value": "White"
+        },
+        "mandatory": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "reference",
+        "uid": "attractions",
+        "display_name": "Attractions",
+        "reference_to": [
+          "attraction"
+        ],
+        "field_metadata": {
+          "ref_multiple": true,
+          "ref_multiple_content_types": true
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "number",
+        "uid": "threshold_km",
+        "display_name": "E-bike-only threshold (km)",
+        "field_metadata": {
+          "description": "Trips farther than this only recommend 'Any distance' bikes.",
+          "default_value": 5
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "text",
+        "uid": "fallback_label",
+        "display_name": "Fallback label",
+        "field_metadata": {
+          "description": "Used when the visitor's location is unavailable or too far away.",
+          "default_value": ""
+        },
+        "format": "",
+        "error_messages": {
+          "format": ""
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "number",
+        "uid": "fallback_latitude",
+        "display_name": "Fallback latitude",
+        "field_metadata": {
+          "description": "",
+          "default_value": 52.3791
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "number",
+        "uid": "fallback_longitude",
+        "display_name": "Fallback longitude",
+        "field_metadata": {
+          "description": "",
+          "default_value": 4.9003
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "number",
+        "uid": "max_origin_km",
+        "display_name": "Max distance from fallback (km)",
+        "field_metadata": {
+          "description": "Visitors farther than this see distances from the fallback point.",
+          "default_value": 50
+        }
+      },
+      {
+        "mandatory": false,
+        "multiple": true,
+        "non_localizable": false,
+        "unique": false,
+        "data_type": "group",
+        "uid": "bikes",
+        "display_name": "Bikes",
+        "field_metadata": {
+          "description": "",
+          "instruction": ""
+        },
+        "schema": [
+          {
+            "mandatory": false,
+            "multiple": false,
+            "non_localizable": false,
+            "unique": false,
+            "data_type": "text",
+            "uid": "title",
+            "display_name": "Title",
+            "field_metadata": {
+              "description": "",
+              "default_value": "",
+              "isTitle": true
+            },
+            "format": "",
+            "error_messages": {
+              "format": ""
+            }
+          },
+          {
+            "mandatory": false,
+            "multiple": false,
+            "non_localizable": false,
+            "unique": false,
+            "data_type": "file",
+            "uid": "image",
+            "display_name": "Image",
+            "field_metadata": {
+              "description": "",
+              "rich_text_type": "standard",
+              "image": true
+            },
+            "dimension": {
+              "width": {
+                "min": 1,
+                "max": null
+              },
+              "height": {
+                "min": 1,
+                "max": null
+              }
+            }
+          },
+          {
+            "mandatory": false,
+            "multiple": false,
+            "non_localizable": false,
+            "unique": false,
+            "data_type": "text",
+            "uid": "description",
+            "display_name": "Description",
+            "field_metadata": {
+              "description": "",
+              "default_value": ""
+            },
+            "format": "",
+            "error_messages": {
+              "format": ""
+            }
+          },
+          {
+            "mandatory": false,
+            "multiple": false,
+            "non_localizable": false,
+            "unique": false,
+            "data_type": "text",
+            "uid": "best_for",
+            "display_name": "Best for",
+            "display_type": "dropdown",
+            "enum": {
+              "advanced": true,
+              "choices": [
+                {
+                  "key": "Any distance",
+                  "value": "any"
+                },
+                {
+                  "key": "Short trips only",
+                  "value": "short"
+                }
+              ]
+            },
+            "field_metadata": {
+              "description": "Long trips only recommend 'Any distance' bikes.",
+              "default_value": ""
+            }
+          },
+          {
+            "mandatory": false,
+            "multiple": false,
+            "non_localizable": false,
+            "unique": false,
+            "data_type": "reference",
+            "uid": "link_page",
+            "display_name": "Link Page",
+            "reference_to": [
+              "page",
+              "e_bikes",
+              "pdp"
+            ],
+            "field_metadata": {
+              "ref_multiple": false,
+              "ref_multiple_content_types": true
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
