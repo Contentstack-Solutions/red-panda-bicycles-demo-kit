@@ -1,5 +1,5 @@
 {
-  "name": "red-panda-demo-kit",
+  "name": "red-panda-bicycles-demo-kit",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -26,7 +26,7 @@
     "@uiw/react-json-view": "^2.0.0-alpha.43",
     "contentstack": "^3.26.2",
     "leaflet": "^1.9.4",
-    "next": "15.5.4",
+    "next": "15.5.29",
     "next-intl": "^4.3.9",
     "react": "19.1.0",
     "react-dom": "19.1.0"
@@ -38,12 +38,18 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.5.4",
+    "eslint-config-next": "15.5.29",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "vitest": "^3.2.7"
+    "vitest": "^4.1.12"
   },
   "engines": {
     "node": ">=20.6"
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "^11.0.1"
+    },
+    "postcss": "^8.5.23"
   }
 }

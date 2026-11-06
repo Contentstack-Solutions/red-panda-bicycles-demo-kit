@@ -15,7 +15,7 @@ Claude takes it from there, using the steps in [For AI agents](#for-ai-agents) b
 Or start it yourself:
 
 ```bash
-gh repo create my-red-panda-demo --template Contentstack-Solutions/red-panda-demo-kit --private --clone
+gh repo create my-red-panda-demo --template Contentstack-Solutions/red-panda-bicycles-demo-kit --private --clone
 ```
 
 ```bash
@@ -39,10 +39,10 @@ Your keys live in `.env.local`, which is git-ignored. Never commit it, and never
 
 If a user gave you this repo's link and asked you to set it up, follow these steps in order.
 
-1. **Make the user's own copy.** Launch deploys from a GitHub repo the user owns, so a plain clone isn't enough. Ask what to call the repo (suggest `my-red-panda-demo`), then run this. The template is `Contentstack-Solutions/red-panda-demo-kit`; if you were given a link to a different copy, use that one's `<owner>/<repo>` instead:
+1. **Make the user's own copy.** Launch deploys from a GitHub repo the user owns, so a plain clone isn't enough. Ask what to call the repo (suggest `my-red-panda-demo`), then run this. The template is `Contentstack-Solutions/red-panda-bicycles-demo-kit`; if you were given a link to a different copy, use that one's `<owner>/<repo>` instead:
 
    ```bash
-   gh repo create <name> --template Contentstack-Solutions/red-panda-demo-kit --private --clone
+   gh repo create <name> --template Contentstack-Solutions/red-panda-bicycles-demo-kit --private --clone
    ```
 
    If `gh` isn't installed or signed in, ask the user to run `gh auth login` in their Terminal and tell you when it's done. If they can't use `gh`, clone the repo, have them create an empty GitHub repo, and point `origin` at it before the Launch phase.
