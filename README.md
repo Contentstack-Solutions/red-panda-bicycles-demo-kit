@@ -120,7 +120,7 @@ Only objects that setup created (recorded in `.kit/state.json`) are removed. Any
 ## More
 
 - [docs/manual-steps.md](docs/manual-steps.md): every step in a browser
-- [docs/demo-script.md](docs/demo-script.md): the demo itself
+- [docs/demo-script.md](docs/demo-script.md): the demo story, talking points and click path
 - [docs/mcp-profile.md](docs/mcp-profile.md): connecting Claude to your data through Profile Hub
 - [docs/architecture.md](docs/architecture.md): how the pieces fit
 - [docs/maintainers.md](docs/maintainers.md): refreshing the content, the leak check, tests and publishing
