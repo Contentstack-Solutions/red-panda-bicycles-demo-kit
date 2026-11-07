@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { KitError, apiBase, nonUsRegionWithoutHosts, personaEmail, requireEnv } from "./lib/env.mjs";
 import { createCma } from "./lib/cma.mjs";
 import { createCredentials } from "../../.claude/skills/red-panda-customer-insights/scripts/rp.mjs";
+import { standInTitle } from "./lib/importRun.mjs";
 
 export const COMMERCE_EXTENSION_TITLES = ["RP Commerce Products", "RP Commerce Category"];
 
@@ -139,9 +140,16 @@ const CHECKS = {
       const body = await cmaFor(ctx).get("/extensions", { include_marketplace_extensions: "true" });
       const titles = new Set((body?.extensions ?? []).map((x) => x.title));
       const missing = COMMERCE_EXTENSION_TITLES.filter((t) => !titles.has(t));
-      return missing.length
-        ? fail("commerce-app", `missing extension(s): ${missing.join(", ")}`, `Missing ${missing.join(", ")}. ${MARKETPLACE_PATH}`)
-        : pass("commerce-app", `found ${COMMERCE_EXTENSION_TITLES.join(", ")}`);
+      if (!missing.length) return pass("commerce-app", `found ${COMMERCE_EXTENSION_TITLES.join(", ")}`);
+      if (missing.every((t) => titles.has(standInTitle(t)))) {
+        return pass("commerce-app", "not installed; the kit's read-only stand-in fields are in place (the site shows the products saved in the CMS)");
+      }
+      // Optional: the import can run without it (--without-commerce), so this never fails doctor.
+      return warn(
+        "commerce-app",
+        `not installed (missing ${missing.join(", ")})`,
+        `Optional. To pick products from the store, ${MARKETPLACE_PATH}. Without it, run the import as \`npm run kit:import -- --without-commerce\`.`,
+      );
     } catch (e) {
       return fail("commerce-app", `extensions lookup ${errText(e)}`, MARKETPLACE_PATH);
     }

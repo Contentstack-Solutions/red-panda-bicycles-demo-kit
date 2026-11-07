@@ -27,8 +27,9 @@ beforeEach(() => {
 
 describe("import-contentstack CLI", () => {
   it("parses --dry-run and --snapshot, rejects unknown flags with exit 2", () => {
-    expect(parseArgs([])).toEqual({ dryRun: false, snapshot: "seed/contentstack" });
-    expect(parseArgs(["--dry-run", "--snapshot", "x/y"])).toEqual({ dryRun: true, snapshot: "x/y" });
+    expect(parseArgs([])).toEqual({ dryRun: false, withoutCommerce: false, snapshot: "seed/contentstack" });
+    expect(parseArgs(["--dry-run", "--snapshot", "x/y"])).toEqual({ dryRun: true, withoutCommerce: false, snapshot: "x/y" });
+    expect(parseArgs(["--without-commerce"]).withoutCommerce).toBe(true);
     expect(() => parseArgs(["--force"])).toThrow(expect.objectContaining({ code: 2 }));
     expect(() => parseArgs(["--snapshot"])).toThrow(expect.objectContaining({ code: 2 }));
   });

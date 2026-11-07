@@ -9,7 +9,7 @@ Symptom → cause → what to do. Section numbers (§) refer to `docs/manual-ste
 | `cma` fails, "cannot read the stack (write scope?)" | Management token is read-only, or for another stack | §2: a management token **with write access**, and the right `CONTENTSTACK_API_KEY`. |
 | `delivery-token` fails | Token scoped to a different environment than `CONTENTSTACK_ENVIRONMENT`, or wrong region host | §2; check `CONTENTSTACK_HOST` matches the region (§1). |
 | `persona` fails | `DEMO_PERSONA_EMAIL` has a `+`, capitals or spaces | Use a plain lowercase address. Lytics search breaks on `+`. |
-| `commerce-app` lists missing extension titles | RP Commerce isn't installed in this stack, or it's a different version | §4. Access is the SE's responsibility (ask the app owner). The import refuses to start without it. |
+| `commerce-app` warns about missing extension titles | RP Commerce isn't installed in this stack, or it's a different version | Optional. Install it (§4; access is the SE's responsibility), or run the import with `--without-commerce`. |
 | `npm run kit:import` exits 2: master language | The stack's master language isn't English (`en`) | It can't be changed. The SE creates a new stack (§1) and updates the API key and tokens. |
 | `npm run kit:import` exits 3 and lists conflicts | The stack has content the kit didn't create | Stop and ask. It never overwrites. Use an empty stack, or the SE removes those items. |
 | The import stops partway (429, network) | Rate limit or a dropped connection | Re-run `npm run kit:import`. It resumes from its UID map without duplicating. |

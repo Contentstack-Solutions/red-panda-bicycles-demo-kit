@@ -33,6 +33,7 @@ function fullState() {
     // The hero entry exists only in en; the homepage also has an nl version.
     progress: { "entries:base": { "hero_banner/src_hero.en": true, "homepage/src_home.en": true, "homepage/src_home.nl": true } },
     created: {
+      extensions: ["tx_standin1", "tx_standin2"],
       locales: ["nl"],
       environments: ["preview"],
       taxonomies: ["bike_types"],
@@ -260,7 +261,9 @@ describe("planTeardown", () => {
     expect(work.at(-1).kind).toBe("audience-delete"); // Lytics is the last thing teardown deletes
     // 5–8: entries unpublished before deleted; then assets, folders, schema, environments
     expect(lastIdx(steps, "entry-unpublish")).toBeLessThan(idx(steps, "entry-delete"));
-    const order = ["event-delete", "entry-delete", "asset-delete", "folder-delete", "content-type-delete", "global-field-delete", "taxonomy-delete", "environment-delete", "audience-delete"];
+    const order = ["event-delete", "entry-delete", "asset-delete", "folder-delete", "content-type-delete", "global-field-delete", "extension-delete", "taxonomy-delete", "environment-delete", "audience-delete"];
+    // stand-in field extensions, after the schemas that use them; reverse creation order
+    expect(steps.filter((s) => s.kind === "extension-delete").map((s) => s.uid)).toEqual(["tx_standin2", "tx_standin1"]);
     for (let i = 1; i < order.length; i++) expect(lastIdx(steps, order[i - 1])).toBeLessThan(idx(steps, order[i]));
     // nested folders: the child (created second) goes first
     expect(steps.filter((s) => s.kind === "folder-delete").map((s) => s.uid)).toEqual(["fold_child", "fold_parent"]);

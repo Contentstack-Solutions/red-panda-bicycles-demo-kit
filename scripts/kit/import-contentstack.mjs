@@ -1,10 +1,12 @@
 // import-contentstack: replays the committed snapshot (seed/contentstack/) into your stack.
-// Usage: npm run kit:import [-- --dry-run] [-- --snapshot <dir>]
-//   (node --env-file=.env.local scripts/kit/import-contentstack.mjs [--dry-run] [--snapshot <dir>])
+// Usage: npm run kit:import [-- --dry-run] [-- --without-commerce] [-- --snapshot <dir>]
+//   (node --env-file=.env.local scripts/kit/import-contentstack.mjs [--dry-run] [--without-commerce] [--snapshot <dir>])
+// --without-commerce: when the RP Commerce app isn't installed, use read-only stand-in fields for
+// its two field extensions instead of stopping (remembered in .kit/state.json for re-runs).
 // Resumable: progress is saved to .kit/state.json after every object; re-running skips what's done.
 // Exit codes: 0 ok · 1 error · 2 missing input or credential (including: no publish environment
 // exists, so nothing was published yet) · 3 needs a person's decision (the stack already has
-// content the kit didn't create; nothing was changed).
+// content the kit didn't create, or RP Commerce isn't installed; nothing was changed).
 // Never prints token values.
 import { fileURLToPath } from "node:url";
 import { KitError, requireEnv, publishEnvironmentNames } from "./lib/env.mjs";
@@ -15,15 +17,16 @@ import { assertNotTornDown, loadKitState, saveKitState } from "./lib/state.mjs";
 import { redact } from "../../.claude/skills/red-panda-customer-insights/scripts/rp.mjs";
 
 export function parseArgs(argv) {
-  const out = { dryRun: false, snapshot: "seed/contentstack" };
+  const out = { dryRun: false, withoutCommerce: false, snapshot: "seed/contentstack" };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === "--dry-run") out.dryRun = true;
+    else if (a === "--without-commerce") out.withoutCommerce = true;
     else if (a === "--snapshot") {
       const v = argv[++i];
       if (!v || v.startsWith("--")) throw new KitError("--snapshot needs a directory", { code: 2 });
       out.snapshot = v;
-    } else throw new KitError(`Unknown argument "${a}"`, { code: 2, hint: "Usage: npm run kit:import -- [--dry-run] [--snapshot <dir>]" });
+    } else throw new KitError(`Unknown argument "${a}"`, { code: 2, hint: "Usage: npm run kit:import -- [--dry-run] [--without-commerce] [--snapshot <dir>]" });
   }
   return out;
 }
@@ -78,6 +81,7 @@ export async function main(argv, deps = {}) {
       envNames,
       siteUrl: vars.SITE_URL,
       dryRun: args.dryRun,
+      withoutCommerce: args.withoutCommerce,
       save: (s) => saveKitState(s, statePath),
       log: out,
       ...(deps.readFile ? { readFile: deps.readFile } : {}),

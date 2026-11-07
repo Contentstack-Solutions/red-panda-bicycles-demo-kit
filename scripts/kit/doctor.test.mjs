@@ -63,13 +63,24 @@ describe("doctor", () => {
     );
   });
 
-  it("fails commerce-app naming the missing extension and the Marketplace path", async () => {
+  it("warns, without failing, when RP Commerce isn't installed: naming the Marketplace path and --without-commerce", async () => {
     const { fetchImpl } = fakeFetch({ extensions: ["RP Commerce Products"] });
     const results = await runChecks({ creds: testCreds(), fetchImpl, nodeVersion: "22.0.0" });
     const r = byName(results, "commerce-app");
-    expect(r.ok).toBe(false);
-    expect(r.fix).toContain("RP Commerce Category");
+    expect(r.ok).toBe(true);
+    expect(r.warn).toBe(true);
+    expect(r.detail).toContain("RP Commerce Category");
     expect(r.fix).toContain("Contentstack → Marketplace → Apps → install RP Commerce in this stack (ask the app owner for access)");
+    expect(r.fix).toContain("--without-commerce");
+  });
+
+  it("passes commerce-app when the kit's stand-in fields are in place", async () => {
+    const { fetchImpl } = fakeFetch({ extensions: ["RP Commerce Products (kit stand-in)", "RP Commerce Category (kit stand-in)"] });
+    const results = await runChecks({ creds: testCreds(), fetchImpl, nodeVersion: "22.0.0" });
+    const r = byName(results, "commerce-app");
+    expect(r.ok).toBe(true);
+    expect(r.warn).toBeFalsy();
+    expect(r.detail).toContain("stand-in");
   });
 
   it("warns, without failing, when no store settings are set: the site uses the CMS snapshots", async () => {

@@ -49,6 +49,14 @@ Expected results to confirm along the way:
 - `npm run kit:doctor -- --phase commerce` passes with a real RP Commerce install. It first checks the app's extension titles. Then it requests `/api/public/store/<id>/categories/categoryByUrl?url=/e-bikes` and expects a 200.
 - That request sends the store token in both the `Authorization` and `x-store-token` headers, as `src/lib/rpcommerce.js` does. Pass: "store reachable". A 401 or 403 means the headers are wrong for your store.
 
+- Checkout with a real store: add the Roam (its button says "Pre-order") and check out. The store's `/embed/checkout` page loads inside the site's overlay (the store allows framing), the email is prefilled for a signed-in member, the order completes, and the overlay closes on "Continue shopping". Afterwards Lytics shows an `rp_orders` event with `action: "preorder"` for that visitor, the store's purchase event arrives through the site's tag, and `kit:verify -- --counts` shows `roam_preorder` one higher (allow for Lytics processing time).
+
+## Without RP Commerce (`kit:import -- --without-commerce`)
+
+- `POST /v3/extensions` with `{extension:{title, type:"field", data_type:"json", multiple:false, config:{}, srcdoc}}` creates the two stand-in fields (from the management SDK's docs; not yet run against a real stack). Content types and global fields that reference them save, and entries keep their saved product JSON.
+- In the entry editor, a stand-in field shows the saved product names read-only, and saving the entry keeps the field's value.
+- `kit:teardown` deletes the stand-ins (`DELETE /v3/extensions/{uid}`) after the content types and global fields.
+
 ## Contentstack import (`kit:import`)
 
 Stack and locales

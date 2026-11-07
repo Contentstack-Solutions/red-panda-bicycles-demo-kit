@@ -124,9 +124,11 @@ export function planTeardown(state, { envNames = ["preview"] } = {}) {
   }
   for (const uid of list("folders").reverse()) add({ id: `folder:${uid}`, kind: "folder-delete", uid, label: `Delete asset folder ${uid}` });
 
-  // 7. Content types, then the global fields they use, then taxonomies
+  // 7. Content types, then the global fields they use, then the stand-in field extensions
+  // (--without-commerce) that both used, then taxonomies
   for (const uid of list("contentTypes").reverse()) add({ id: `content-type:${uid}`, kind: "content-type-delete", uid, label: `Delete content type ${uid}` });
   for (const uid of list("globalFields").reverse()) add({ id: `global-field:${uid}`, kind: "global-field-delete", uid, label: `Delete global field ${uid}` });
+  for (const uid of list("extensions").reverse()) add({ id: `extension:${uid}`, kind: "extension-delete", uid, label: `Delete stand-in field extension ${uid}` });
   for (const uid of list("taxonomies").reverse()) add({ id: `taxonomy:${uid}`, kind: "taxonomy-delete", uid, label: `Delete taxonomy ${uid}` });
 
   // 8. Environments and languages the kit created (never adopted ones)
@@ -267,6 +269,7 @@ const EXEC = {
   "folder-delete": (s, d) => d.cma.del(`/assets/folders/${s.uid}`).then(() => "deleted"),
   "content-type-delete": (s, d) => d.cma.del(`/content_types/${s.uid}`).then(() => "deleted"),
   "global-field-delete": (s, d) => d.cma.del(`/global_fields/${s.uid}`).then(() => "deleted"),
+  "extension-delete": (s, d) => d.cma.del(`/extensions/${s.uid}`).then(() => "deleted"),
   "taxonomy-delete": (s, d) => d.cma.del(`/taxonomies/${s.uid}`).then(() => "deleted"),
   "environment-delete": (s, d) => d.cma.del(`/environments/${encodeURIComponent(s.name)}`).then(() => "deleted"),
   async "locale-delete"(s, d, state, log) {
@@ -330,7 +333,7 @@ export function teardownNeeds(steps, state = {}) {
   return {
     brandkit: has("brandkit-vault", "brandkit-profile"),
     personalize: has("variant-unpublish", "variant-delete", "experience-delete", "event-delete"),
-    cma: has("variant-group-delete", "entry-unpublish", "entry-delete", "asset-delete", "check-containers", "folder-delete", "content-type-delete", "global-field-delete", "taxonomy-delete", "environment-delete", "locale-delete"),
+    cma: has("variant-group-delete", "entry-unpublish", "entry-delete", "asset-delete", "check-containers", "folder-delete", "content-type-delete", "global-field-delete", "extension-delete", "taxonomy-delete", "environment-delete", "locale-delete"),
     lytics: has("audience-delete", "lytics-whitelist-restore"),
     lyticsSettings: has("lytics-whitelist-restore"),
   };

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/context/cart.context";
+import { isPreorderButton } from "@/lib/checkoutEmbed";
 import { usePersonalize } from "@/context/personalize.context";
 import { trackAddToCart } from "@/lib/analytics";
 import { ContentstackClient } from "@/lib/contentstack-client";
@@ -43,7 +44,7 @@ export default function PDPView({ commerceProduct, initialOverlayEntries, slug, 
     setAddError(null);
     try {
       // Track only real adds (addItem returns false when the cart isn't set up).
-      if (await addItem(product.id, 1, locale)) trackAddToCart(personalize, product);
+      if (await addItem(product.id, 1, locale, { preorder: isPreorderButton(product.buttonText) })) trackAddToCart(personalize, product);
     } catch (err) {
       setAddError(err.message);
     } finally {

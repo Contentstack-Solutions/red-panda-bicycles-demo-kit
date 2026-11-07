@@ -79,6 +79,8 @@ In the `--counts` output, the `q1`, `q2` and `q3` rows are the answers to questi
 
 If the hero doesn't change, run `npm run kit:verify` and read the failing line.
 
+**Optional: the pre-order (needs RP Commerce connected).** On the Roam's product page, choose **Pre-order** and check out as Sam. The checkout opens over the site; place the order. **Say:** "That's one more toward our 300." Back in Claude Code, ask "How many Roam pre-orders do we have now?" and the count is one higher; Lytics can take a minute or two to update. The count is of people, so it only goes up the first time a given persona pre-orders; later demos with Sam won't move it. The reset doesn't remove the pre-order (Lytics events can't be deleted), and `kit:verify -- --counts` allows ±5%, so a few extra pre-orders don't fail it.
+
 **Optional: the day trip.** Open the blog article "A Good Day Out Around Amsterdam" and use the Trip Planner at the bottom. Pick a farther destination; the planner recommends a bike for the distance. **Say:** "Destinations that felt out of reach are a day trip on the Roam, and every choice she makes tells us more about her."
 
 **Optional: the brand's voice.** In Claude Code, ask:
@@ -98,7 +100,7 @@ If the hero doesn't change, run `npm run kit:verify` and read the failing line.
 
 Don't promise these; the kit doesn't build them yet:
 
-- The Roam pre-order checkout with trade-in credit for the Volt (the moment the pre-order count goes up by one).
+- Trade-in credit for the Volt at checkout. (The pre-order checkout itself works when RP Commerce is connected; see the optional beat in Act 2.)
 - A personalized Roam product page.
 - Agents that edit pages for you or post each pre-order to Slack.
 

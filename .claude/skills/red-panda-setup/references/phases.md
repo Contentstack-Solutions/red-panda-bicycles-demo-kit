@@ -38,21 +38,23 @@ Never use it for a token (`CONTENTSTACK_MANAGEMENT_TOKEN`, `CONTENTSTACK_DELIVER
 
 ## 2. Commerce
 
-- **Manual:** §4 (install RP Commerce). Connecting the store is optional: if the SE has the store ID, store token and API URL, they go in `.env.local` (the store token is a secret, so the SE pastes it). Without them the site shows the products saved in the CMS and the cart stays empty; don't hold up setup for them.
+- **Optional phase.** Ask the SE whether they have access to RP Commerce. If not, skip §4 and remember to run phase 3 with `--without-commerce`. Don't hold up setup for it.
+- **Manual (with RP Commerce):** §4 (install the app; the store ID, store token and API URL go in `.env.local`; the store token is a secret, so the SE pastes it).
 - **Check:** `npm run kit:doctor -- --phase commerce`
 - **Command:** none.
-- **Success:** doctor exits 0 (`commerce-app` finds the extensions `RP Commerce Products` and `RP Commerce Category`; `commerce-store` reaches the store, or warns that no store settings are set, which is fine). No state key.
-- **Failure:** missing extension titles mean the app isn't installed in this stack, or is a different version. Getting access is the SE's job (ask the app owner). The import checks again and stops before writing anything.
+- **Success:** doctor exits 0. With RP Commerce, `commerce-app` finds `RP Commerce Products` and `RP Commerce Category` and `commerce-store` reaches the store. Without it, both warn, which is fine. No state key.
+- **Partial:** app installed but no store settings is fine too: products can be picked in the CMS, and the site shows the saved products with no cart.
 
 ## 3. Contentstack
 
 - **Check:** `npm run kit:doctor -- --phase contentstack`
-- **Command:** `npm run kit:import -- --dry-run` to show the plan, then `npm run kit:import`. It creates languages, environments, taxonomies, global fields, content types (in two passes), asset folders and assets, entries, and publishes them.
+- **Command:** `npm run kit:import -- --dry-run` to show the plan, then `npm run kit:import` (add `-- --without-commerce` when RP Commerce isn't installed; it's remembered for re-runs). It creates languages, environments, taxonomies, global fields, content types (in two passes), asset folders and assets, entries, and publishes them.
 - **Success:** exits 0; `.kit/state.json` has `phases.contentstack.done` and `ids.homepage` / `ids.heroBanner`.
 - **Manual, after the import:** §6 (enable Live Preview: Settings → Live Preview, environment `preview`, the preview token; the management token can't change it). §5 (Developer Tools, Audience Insights) is optional.
 - **Failure:**
   - Exit 2, master language: the stack isn't `en`. The SE creates a new stack (§1) and updates `CONTENTSTACK_API_KEY` and the tokens.
   - Exit 2, "nothing was published": none of the publish environments exists in the stack. Everything else was imported. The SE creates the missing environment (§2) or fixes `CONTENTSTACK_ENVIRONMENT` / `CONTENTSTACK_PUBLISH_ENVIRONMENTS`; then re-run, which publishes what was skipped.
+  - Exit 3, RP Commerce isn't installed: nothing was changed. Ask the SE: install the app (§4) and re-run, or re-run with `--without-commerce` (read-only stand-in fields; the stack can't switch to the app later).
   - Exit 3, conflicts: the stack already has content the kit didn't create. It lists the conflicts and never overwrites. Ask the SE: use a new, empty stack, or remove those items themselves.
   - Exit 1 partway (for example a 429): re-run. It picks up its UID map and creates only what's missing.
 

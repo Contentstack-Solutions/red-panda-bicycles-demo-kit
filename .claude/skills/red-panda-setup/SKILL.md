@@ -35,8 +35,8 @@ Do them in this order. Details, flags and failure handling for each: `references
 |---|---|---|---|---|---|
 | 0 | Prereqs | `node -v` (20.6 or newer) | `npm ci` | `npm ci` exits 0 | none |
 | 1 | Keys | `npm run kit:doctor -- --phase keys` | (fill `.env.local`) | doctor exits 0 | §1 stack (master language English, `en`), §2 tokens, §3 Launch project name → `SITE_URL`, §7 Lytics token, account ID and persona email |
-| 2 | Commerce | `npm run kit:doctor -- --phase commerce` | none | doctor exits 0 | §4 RP Commerce |
-| 3 | Contentstack | `npm run kit:doctor -- --phase contentstack` | `npm run kit:import` | `phases.contentstack.done` | §5 optional apps, §6 Live Preview (after the import) |
+| 2 | Commerce (optional) | `npm run kit:doctor -- --phase commerce` | none | doctor exits 0 (warnings are fine) | §4 RP Commerce, only if the SE has access |
+| 3 | Contentstack | `npm run kit:doctor -- --phase contentstack` | `npm run kit:import`, or `npm run kit:import -- --without-commerce` when RP Commerce isn't installed | `phases.contentstack.done` | §5 optional apps, §6 Live Preview (after the import) |
 | 4 | Lytics | `npm run kit:doctor -- --phase lytics` | `npm run kit:lytics` | `phases.lytics.done` and `expected` | none (§7 was done in phase 1) |
 | 5 | Personalize | `npm run kit:doctor -- --phase personalize` | `npm run kit:personalize` | `phases.personalize.done` | §8 project + Lytics, §9 login, then §12 goals |
 | 5b | Brand Kit | `npm run kit:doctor -- --phase brandkit` | `npm run kit:brandkit` | `phases.brandkit.done` | §10 Brand Kit; §11 only on 401/403 |
@@ -48,6 +48,7 @@ When a phase needs a manual step, send the SE to that section, say what to tell 
 
 ## Things that trip people up
 
+- **RP Commerce is optional.** Ask the SE once, in phase 2, whether they have access to it. Without it, the import needs `--without-commerce` (the SE's choice: it can't be switched to the app later in the same stack); without the flag it exits 3 and changes nothing.
 - **The stack's master language must be English (`en`).** It can't be changed later, and `npm run kit:import` exits 2 on any other. Catch it in phase 1.
 - **`SITE_URL` must be the Launch address before phase 4**, even though Launch is set up in phase 6. `npm run kit:lytics` exits 2 when it's localhost. Pick the Launch project name in phase 1.
 - **The setup publishes to `CONTENTSTACK_PUBLISH_ENVIRONMENTS`** (else `CONTENTSTACK_ENVIRONMENT`, else `preview`). Make sure it includes the environment the site reads.

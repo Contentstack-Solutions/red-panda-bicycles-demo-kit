@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { fileURLToPath } from "node:url";
 import { KitError } from "./env.mjs";
 import { loadSnapshot } from "./importPlan.mjs";
-import { runImport } from "./importRun.mjs";
+import { runImport, standInTitle } from "./importRun.mjs";
 import { fakeCma } from "./fakeCma.mjs";
 
 const SEED = fileURLToPath(new URL("../../../seed/contentstack", import.meta.url));
@@ -23,6 +23,7 @@ async function run(fake, opts = {}) {
     envNames: opts.envNames ?? ["preview"],
     siteUrl: "https://site.example",
     dryRun: opts.dryRun ?? false,
+    withoutCommerce: opts.withoutCommerce ?? false,
     save: (s) => saves.push(structuredClone(s)),
     log: (l) => lines.push(l),
     readFile,
@@ -226,13 +227,81 @@ describe("runImport", () => {
     expect(fake.store.has(`/content_types/homepage/entries/${state.ids.homepage}@nl`)).toBe(true);
   });
 
-  it("stops before schema writes when commerce extensions are missing", async () => {
+  it("stops before any write when RP Commerce is missing, and asks for a decision", async () => {
     const fake = fakeCma({ extensions: [{ uid: "tgt_products", title: "RP Commerce Products" }] });
     const e = await catchRun(fake);
     expect(e).toBeInstanceOf(KitError);
-    expect(e.code).toBe(2);
+    expect(e.code).toBe(3);
     expect(e.details.missing).toEqual(["RP Commerce Category"]);
+    expect(e.hint).toContain("--without-commerce");
     expect(fake.writes()).toEqual([]);
+  });
+
+  describe("without RP Commerce (stand-in fields)", () => {
+    const standIns = (fake) => fake.writes().filter((r) => r.method === "POST" && r.path === "/extensions");
+
+    it("creates a read-only stand-in for each missing field extension before anything else", async () => {
+      const fake = fakeCma({ extensions: [] });
+      const { state } = await run(fake, { withoutCommerce: true });
+      const posts = standIns(fake);
+      expect(posts.map((r) => r.body.extension.title)).toEqual([standInTitle("RP Commerce Products"), standInTitle("RP Commerce Category")]);
+      for (const r of posts) {
+        expect(r.body.extension).toMatchObject({ type: "field", data_type: "json", multiple: false });
+        expect(r.body.extension.srcdoc).toContain("ui-extensions-sdk");
+      }
+      expect(fake.writes()[0].path).toBe("/extensions");
+      expect(state.created.extensions).toHaveLength(2);
+      expect(state.commerce).toBe("stand-in");
+    });
+
+    it("points the content types at the stand-ins and keeps the product snapshots in entries", async () => {
+      const fake = fakeCma({ extensions: [] });
+      const { state } = await run(fake, { withoutCommerce: true });
+      const [products, category] = state.created.extensions;
+      expect(JSON.stringify(fake.store.get("/content_types/pdp"))).toContain(products);
+      expect(JSON.stringify(fake.store.get("/global_fields/category_banner"))).toContain(category);
+      const src = snap().entries.find((e) => e.ct === "pdp" && e.locale === "en");
+      const stored = fake.store.get(`/content_types/pdp/entries/${state.uidMap[src.uid]}@en`);
+      expect(stored.product).toEqual(src.entry.product);
+    });
+
+    it("reuses the stand-ins on a re-run, without the option", async () => {
+      const fake = fakeCma({ extensions: [] });
+      const { state } = await run(fake, { withoutCommerce: true });
+      const before = standIns(fake).length;
+      await run(fake, { state });
+      expect(standIns(fake).length).toBe(before);
+    });
+
+    it("uses the real app when it's installed, even with the option", async () => {
+      const fake = fakeCma();
+      const { state } = await run(fake, { withoutCommerce: true });
+      expect(standIns(fake)).toEqual([]);
+      expect(state.created.extensions).toEqual([]);
+      expect(state.commerce).toBeUndefined();
+    });
+
+    it("writes nothing on a dry run", async () => {
+      const fake = fakeCma({ extensions: [] });
+      await run(fake, { withoutCommerce: true, dryRun: true });
+      expect(fake.writes()).toEqual([]);
+    });
+
+    it("records a stand-in whose create response was lost, instead of creating another", async () => {
+      const fake = fakeCma({ extensions: [{ uid: "tx_lost", title: standInTitle("RP Commerce Products") }] });
+      const state = { version: 1, uidMap: {}, assets: {}, created: {}, phases: {}, pending: { phase: "extensions", kind: "extensions", key: "RP Commerce Products" } };
+      const { state: next } = await run(fake, { withoutCommerce: true, state });
+      expect(standIns(fake).map((r) => r.body.extension.title)).toEqual([standInTitle("RP Commerce Category")]);
+      expect(next.created.extensions).toContain("tx_lost");
+    });
+
+    it("leaves alone a stand-in it didn't create", async () => {
+      const fake = fakeCma({ extensions: [{ uid: "tx_old", title: standInTitle("RP Commerce Products") }, { uid: "tx_old2", title: standInTitle("RP Commerce Category") }] });
+      const { state } = await run(fake, { withoutCommerce: true });
+      expect(standIns(fake)).toEqual([]);
+      expect(state.created.extensions).toEqual([]);
+      expect(state.commerce).toBe("stand-in");
+    });
   });
 
   it("stops when the stack's master language is not en", async () => {

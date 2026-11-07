@@ -2,11 +2,21 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { usePersonalize } from "@/context/personalize.context";
-import { settle, trackCheckoutStarted } from "@/lib/analytics";
+import { settle, trackCheckoutStarted, trackPreorder } from "@/lib/analytics";
+import { forgetPreorders, preorderItems, readPreorderIds, rememberPreorder } from "@/lib/checkoutEmbed";
+import CheckoutOverlay from "@/components/CheckoutOverlay";
 
 const CartContext = createContext(null);
 
 const COMMERCE_ORIGIN = (process.env.RED_PANDA_COMMERCE_API_URL || "").replace(/\/$/, "");
+// The origin the checkout iframe's messages come from (scheme + host + port, no path).
+const COMMERCE_MESSAGE_ORIGIN = (() => {
+  try {
+    return COMMERCE_ORIGIN ? new URL(COMMERCE_ORIGIN).origin : "";
+  } catch {
+    return "";
+  }
+})();
 const STORE_ID = process.env.RED_PANDA_COMMERCE_STPRE_ID || "";
 const STORE_TOKEN = process.env.RED_PANDA_COMMERCE_STPRE_TOKEN || "";
 
@@ -40,6 +50,7 @@ export default function CartProvider({ children, memberEmail = null }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [checkoutUrl, setCheckoutUrl] = useState(null);
 
   const openDrawer = useCallback(() => setDrawerOpen(true), []);
   const closeDrawer = useCallback(() => setDrawerOpen(false), []);
@@ -91,14 +102,16 @@ export default function CartProvider({ children, memberEmail = null }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionId]);
 
+  // `preorder`: added from a pre-order button, so completing checkout records a pre-order.
   const addItem = useCallback(
-    async (productId, quantity = 1, locale = "en") => {
+    async (productId, quantity = 1, locale = "en", { preorder = false } = {}) => {
       if (!configured || !sessionId || !productId) return false;
       setError(null);
       const data = await cartFetch("/items", {
         method: "POST",
         body: JSON.stringify({ product_id: productId, quantity, locale }),
       });
+      if (preorder) rememberPreorder(productId);
       setCart(data.cart);
       setDrawerOpen(true);
       return true;
@@ -147,12 +160,33 @@ export default function CartProvider({ children, memberEmail = null }) {
     return url.toString();
   }, [configured, sessionId, memberEmail]);
 
+  // Opens the store's checkout in an overlay on this page (CheckoutOverlay).
   const goToCheckout = useCallback(async () => {
     const url = getCheckoutUrl();
     if (!url) return;
     await settle(trackCheckoutStarted(personalize, cart?.items, cart?.subtotal));
-    window.location.href = url;
+    setDrawerOpen(false);
+    setCheckoutUrl(url);
   }, [getCheckoutUrl, personalize, cart]);
+
+  const closeCheckout = useCallback(() => setCheckoutUrl(null), []);
+
+  // The order is placed: record a pre-order if the cart held one, and start a fresh cart session
+  // (the store closes the old one). The overlay stays open on the store's confirmation.
+  const completeCheckout = useCallback(async () => {
+    if (preorderItems(cart?.items, readPreorderIds()).length) await settle(trackPreorder(personalize));
+    forgetPreorders();
+    const next = crypto.randomUUID();
+    try {
+      window.localStorage.setItem(sessionStorageKey(), next);
+    } catch {
+      // storage blocked: the new session lasts for this page view
+    }
+    setCart(null);
+    setSessionId(next);
+  }, [cart, personalize]);
+
+  const checkoutProfile = useMemo(() => (memberEmail ? { email: memberEmail } : null), [memberEmail]);
 
   const value = useMemo(
     () => ({
@@ -174,5 +208,18 @@ export default function CartProvider({ children, memberEmail = null }) {
     [cart, loading, error, addItem, removeItem, updateQuantity, clear, goToCheckout, drawerOpen, openDrawer, closeDrawer]
   );
 
-  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+  return (
+    <CartContext.Provider value={value}>
+      {children}
+      {checkoutUrl && (
+        <CheckoutOverlay
+          url={checkoutUrl}
+          commerceOrigin={COMMERCE_MESSAGE_ORIGIN}
+          profile={checkoutProfile}
+          onComplete={completeCheckout}
+          onClose={closeCheckout}
+        />
+      )}
+    </CartContext.Provider>
+  );
 }

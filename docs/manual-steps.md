@@ -32,14 +32,22 @@ Check: `npm run kit:doctor -- --phase keys`
 
 The seeder needs to know the site's address before it runs. Choose the Launch project name now, then set `SITE_URL` to `https://<project-name>.contentstackapps.com` (or your custom domain). It must be the Launch URL, not localhost, before you run `npm run kit:lytics`, which stops if it's localhost. To check the site locally, pass `--site http://localhost:3000` to `npm run kit:verify` instead. You create the project itself in step 13.
 
-## 4. Install the RP Commerce app
+## 4. Install the RP Commerce app (optional)
 
-The content types use the app's two product fields, so the import needs the app installed. Getting access is your responsibility: ask the app owner for access.
+RP Commerce gives the site a live catalog, cart and checkout. Everything else works without it. Getting access is your responsibility: ask the app owner.
+
+**With RP Commerce:**
 
 1. Contentstack → **Marketplace → Apps** → install **RP Commerce** in your stack.
-2. **Optional:** connect the live store. Open the app's configuration screen and copy the store ID, store token and API URL into `RED_PANDA_COMMERCE_STPRE_ID`, `RED_PANDA_COMMERCE_STPRE_TOKEN` and `RED_PANDA_COMMERCE_API_URL`. (The `STPRE` spelling is correct; it is the name the code reads.) Set all three or none. Without them the site still works: product and category pages show the products saved in the CMS, and the cart stays empty.
+2. Open the app's configuration screen and copy the store ID, store token and API URL into `RED_PANDA_COMMERCE_STPRE_ID`, `RED_PANDA_COMMERCE_STPRE_TOKEN` and `RED_PANDA_COMMERCE_API_URL`. (The `STPRE` spelling is correct; it is the name the code reads.) Set all three or none.
 
-Check: `npm run kit:doctor -- --phase commerce`. It lists any missing extension titles (`RP Commerce Products`, `RP Commerce Category`); the import checks too, and stops before writing anything. With no store settings it warns but passes.
+Shoppers can then add to cart and check out. The checkout opens over the site, and a pre-order of the Roam (any product whose button says "Pre-order") is recorded in Lytics, so the Roam pre-order count goes up by one.
+
+**Without RP Commerce:** skip this step, and run the import as `npm run kit:import -- --without-commerce`. It creates two read-only stand-in fields in place of the app's product pickers. They keep the product details saved with each entry. Product and category pages show those saved products; there's no cart or checkout. To switch to RP Commerce later, start again in a new stack.
+
+You can also install the app and leave out the store settings: you can pick products in the CMS, and the site still shows the saved products with no cart.
+
+Check: `npm run kit:doctor -- --phase commerce`. It warns, without failing, when the app or the store settings are missing.
 
 ## 5. Install Developer Tools and Audience Insights (optional)
 

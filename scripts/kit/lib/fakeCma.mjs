@@ -13,6 +13,7 @@ export const ALL_EXTENSIONS = [
 // like the CMA does, so a duplicate create shows up as an error, not silently.
 export function fakeCma({ extensions = ALL_EXTENSIONS, masterLocale = "en", store = new Map(), hook } = {}) {
   const log = [];
+  const exts = [...extensions];
   let seq = store.size;
   const newUid = (prefix) => `${prefix}${String(++seq).padStart(4, "0")}`;
   const notFound = () => null;
@@ -33,7 +34,7 @@ export function fakeCma({ extensions = ALL_EXTENSIONS, masterLocale = "en", stor
         const rest = [...store.entries()].filter(([k]) => k.startsWith("/locales/")).map(([, v]) => v);
         return { locales: [{ code: masterLocale, fallback_locale: null }, ...rest] };
       }
-      if (p === "/extensions") return { extensions };
+      if (p === "/extensions") return { extensions: exts };
       if (seg[0] === "content_types" && seg[2] === "entries" && seg.length === 3) {
         const query = JSON.parse(q.query ?? "{}");
         const entries = [...store.entries()]
@@ -53,6 +54,11 @@ export function fakeCma({ extensions = ALL_EXTENSIONS, masterLocale = "en", stor
     }
     if (method === "POST") {
       if (p.endsWith("/publish")) return { notice: "queued" };
+      if (p === "/extensions") {
+        const extension = { ...structuredClone(body.extension), uid: newUid("tx") };
+        exts.push(extension);
+        return { extension };
+      }
       if (p === "/locales") return createFixed(`/locales/${body.locale.code}`, { ...body.locale }), { locale: body.locale };
       if (p === "/environments") return createFixed(`/environments/${body.environment.name}`, { ...body.environment }), { environment: body.environment };
       if (p === "/taxonomies") return createFixed(`/taxonomies/${body.taxonomy.uid}`, { ...body.taxonomy }), { taxonomy: body.taxonomy };

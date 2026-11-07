@@ -36,9 +36,13 @@ export default function CartDrawer({ locale = "en" }) {
     };
   }, [drawerOpen, closeDrawer]);
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
     setCheckingOut(true);
-    goToCheckout();
+    try {
+      await goToCheckout();
+    } finally {
+      setCheckingOut(false);
+    }
   };
 
   const handleClearAll = async () => {
@@ -146,7 +150,7 @@ export default function CartDrawer({ locale = "en" }) {
               disabled={checkingOut}
               className="mt-4 block w-full rounded-full bg-ink py-4 text-center text-sm font-semibold uppercase tracking-widest text-cream transition-colors hover:bg-accent disabled:cursor-wait disabled:opacity-80"
             >
-              {checkingOut ? "Redirecting…" : "Checkout"}
+              {checkingOut ? "Opening checkout…" : "Checkout"}
             </button>
             <Link
               href={`/${locale}/cart`}

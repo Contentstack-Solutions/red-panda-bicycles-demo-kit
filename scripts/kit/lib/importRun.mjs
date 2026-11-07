@@ -5,7 +5,7 @@
 //
 // Safety rules:
 // - A pre-scan does every check before the first write: master locale (exit 2), field
-//   extensions (exit 2), and conflicts (exit 3): a fixed-UID object (content type, global
+//   extensions (exit 3 when RP Commerce is missing and --without-commerce wasn't given), and conflicts (exit 3): a fixed-UID object (content type, global
 //   field, taxonomy) that exists in the stack but that .kit/state.json doesn't record
 //   creating. Nothing is ever overwritten that the kit didn't create. Existing environments
 //   and locales with the snapshot's names are adopted instead (state.adopted).
@@ -19,7 +19,24 @@ import { SCHEMA_HANDLERS, SCHEMA_OUTCOMES } from "./importSchema.mjs";
 import { CONTENT_HANDLERS, CONTENT_OUTCOMES } from "./importContent.mjs";
 
 export const MASTER_LOCALE = "en";
-export const CREATED_KINDS = ["locales", "environments", "taxonomies", "globalFields", "contentTypes", "folders", "assets", "entries"];
+export const CREATED_KINDS = ["extensions", "locales", "environments", "taxonomies", "globalFields", "contentTypes", "folders", "assets", "entries"];
+
+// Without the RP Commerce app (--without-commerce), each of its field extensions is replaced by a
+// stand-in custom field with this title. The stand-in keeps the field's saved JSON (the product
+// snapshots the site falls back to) and shows it read-only; it can't pick new products.
+export const standInTitle = (title) => `${title} (kit stand-in)`;
+const UI_SDK = "https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.3/dist/ui-extension-sdk.js";
+export const STAND_IN_SRCDOC = `<!doctype html><html><head><meta charset="utf-8"><script src="${UI_SDK}"></script>
+<style>body{margin:0;padding:6px 0;font:13px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#475161}</style></head>
+<body><div id="v">Loading…</div><script>
+ContentstackUIExtension.init().then(function (ext) {
+  var d = ext.field.getData() || {};
+  var items = Array.isArray(d.items) ? d.items : Array.isArray(d) ? d : [d];
+  var names = items.map(function (i) { return i && (i.name || i.title || i.url || i.id); }).filter(Boolean);
+  document.getElementById("v").textContent = (names.length ? names.join(", ") : "Nothing saved") + " (saved copy; install the RP Commerce app to pick products)";
+  ext.window.updateHeight();
+});
+</script></body></html>`;
 
 const HANDLERS = { ...SCHEMA_HANDLERS, ...CONTENT_HANDLERS };
 const OUTCOMES = { ...SCHEMA_OUTCOMES, ...CONTENT_OUTCOMES };
@@ -47,12 +64,13 @@ export function prepareState(state) {
  * @param {string[]} [opts.envNames]     CONTENTSTACK_PUBLISH_ENVIRONMENTS
  * @param {string} opts.siteUrl          SITE_URL, the environments' base URL
  * @param {boolean} [opts.dryRun]        GETs only; returns the planned summary
+ * @param {boolean} [opts.withoutCommerce]  replace missing RP Commerce field extensions with stand-ins
  * @param {(state: object) => void} [opts.save]   called after every write
  * @param {(line: string) => void} [opts.log]
  * @param {(file: string) => Promise<Buffer>} [opts.readFile]  asset file reader (tests stub it)
  * @returns {Promise<{state: object, summary: Record<string, {created: number, skipped: number, updated: number}>}>}
  */
-export async function runImport({ cma, snapshot, state, envNames = ["preview"], siteUrl, dryRun = false, save = () => {}, log = () => {}, readFile = fsReadFile }) {
+export async function runImport({ cma, snapshot, state, envNames = ["preview"], siteUrl, dryRun = false, withoutCommerce = false, save = () => {}, log = () => {}, readFile = fsReadFile }) {
   const work = prepareState(dryRun ? structuredClone(state) : state);
   const steps = importOrder(snapshot);
   const summary = {};
@@ -66,6 +84,7 @@ export async function runImport({ cma, snapshot, state, envNames = ["preview"], 
     siteUrl,
     envNames,
     dryRun,
+    withoutCommerce,
     log,
     readFile,
     master: MASTER_LOCALE,
@@ -82,6 +101,8 @@ export async function runImport({ cma, snapshot, state, envNames = ["preview"], 
   };
 
   await prescan(ctx);
+  if (!dryRun) await createStandIns(ctx);
+  buildSchemas(ctx);
 
   for (const step of steps) {
     const done = work.progress[step.phase]?.[step.key];
@@ -109,6 +130,43 @@ export async function runImport({ cma, snapshot, state, envNames = ["preview"], 
   ctx.save();
   // Publish steps skipped because none of the publish environments exists (finding I8).
   return { state: dryRun ? state : work, summary, deferred };
+}
+
+// Remaps every schema's extension_uid through ctx.titleToUid.
+function buildSchemas(ctx) {
+  const { snapshot, titleToUid } = ctx;
+  const uidToTitle = Object.fromEntries((snapshot.extensions ?? []).map((x) => [x.uid, x.title]));
+  ctx.schemas = { globalFields: {}, contentTypes: {} };
+  for (const g of snapshot.globalFields) ctx.schemas.globalFields[g.uid] = remapExtensions(g.schema, titleToUid, uidToTitle);
+  for (const c of snapshot.contentTypes) ctx.schemas.contentTypes[c.uid] = remapExtensions(c.schema, titleToUid, uidToTitle);
+}
+
+// Records the stand-ins found in the stack (as created only when this setup made them: listed,
+// or in flight when a response was lost) and creates the missing ones.
+async function createStandIns(ctx) {
+  const { state, cma } = ctx;
+  for (const { title, uid } of ctx.standInsFound ?? []) {
+    const lost = state.pending?.phase === "extensions" && state.pending?.key === title;
+    if (lost && !state.created.extensions.includes(uid)) state.created.extensions.push(uid);
+    if (lost) delete state.pending;
+    state.commerce = "stand-in";
+  }
+  for (const title of ctx.standInsToCreate) {
+    const step = { phase: "extensions", kind: "extensions", key: title };
+    const res = await ctx.creating(step, () =>
+      cma.post("/extensions", {
+        extension: { title: standInTitle(title), type: "field", data_type: "json", multiple: false, config: {}, tags: ["red-panda-kit"], srcdoc: STAND_IN_SRCDOC },
+      }),
+    );
+    const uid = res?.extension?.uid;
+    if (!uid) throw new KitError(`Creating the stand-in for ${title} returned no uid`, { code: 1, hint: "Re-run npm run kit:import; it finds the stand-in if it was created." });
+    ctx.titleToUid[title] = uid;
+    state.created.extensions.push(uid);
+    state.commerce = "stand-in";
+    delete state.pending;
+    ctx.log(`Created stand-in field "${standInTitle(title)}" (RP Commerce isn't installed)`);
+  }
+  if ((ctx.standInsFound ?? []).length || ctx.standInsToCreate.length) ctx.save();
 }
 
 // state.ids: the target homepage (master locale) and the hero_banner its `hero` field references.
@@ -139,34 +197,37 @@ async function prescan(ctx) {
     throw new KitError(`The snapshot's master language is ${snapMaster}, expected ${master}.`, { code: 1, hint: "Re-export the snapshot." });
   }
 
-  // Field extensions are remapped by title; every schema is checked before anything is written.
+  // Field extensions are remapped by title: the real one (the RP Commerce app's), else a stand-in
+  // already in the stack, else (with --without-commerce, or once chosen) a stand-in created
+  // before the first schema write. Every schema is checked before anything is written.
   const exts = (await cma.get("/extensions", { include_marketplace_extensions: "true" }))?.extensions ?? [];
+  const byTitle = {};
+  for (const x of exts) if (x.title && !byTitle[x.title]) byTitle[x.title] = x.uid;
   const titleToUid = {};
-  for (const x of exts) if (x.title && !titleToUid[x.title]) titleToUid[x.title] = x.uid;
-  const uidToTitle = Object.fromEntries((snapshot.extensions ?? []).map((x) => [x.uid, x.title]));
-  const missing = new Set();
-  const remap = (schema) => {
-    try {
-      return remapExtensions(schema, titleToUid, uidToTitle);
-    } catch (e) {
-      if (e instanceof KitError && e.code === 2 && e.details?.missing) {
-        e.details.missing.forEach((t) => missing.add(t));
-        return null;
-      }
-      throw e;
-    }
-  };
-  ctx.schemas = { globalFields: {}, contentTypes: {} };
-  for (const g of snapshot.globalFields) ctx.schemas.globalFields[g.uid] = remap(g.schema);
-  for (const c of snapshot.contentTypes) ctx.schemas.contentTypes[c.uid] = remap(c.schema);
-  if (missing.size) {
-    const list = [...missing];
-    throw new KitError(`Missing field extension(s) in the target stack: ${list.join(", ")}`, {
-      code: 2,
-      hint: "Install the RP Commerce app in this stack (Marketplace → Apps), then re-run. Nothing was changed.",
-      details: { missing: list },
+  const missing = [];
+  ctx.standInsToCreate = [];
+  const allowStandIns = ctx.withoutCommerce || state.commerce === "stand-in";
+  for (const { title } of snapshot.extensions ?? []) {
+    if (byTitle[title]) titleToUid[title] = byTitle[title];
+    else if (byTitle[standInTitle(title)]) {
+      const uid = byTitle[standInTitle(title)];
+      titleToUid[title] = uid;
+      ctx.standInsFound = [...(ctx.standInsFound ?? []), { title, uid }];
+    } else if (allowStandIns) {
+      titleToUid[title] = `(stand-in for ${title})`;
+      ctx.standInsToCreate.push(title);
+    } else missing.push(title);
+  }
+  if (missing.length) {
+    throw new KitError(`RP Commerce isn't installed in this stack. Missing field extension(s): ${missing.join(", ")}`, {
+      code: 3,
+      hint:
+        "Nothing was changed. Either install the RP Commerce app (Marketplace → Apps) and re-run, or re-run with `npm run kit:import -- --without-commerce` to use read-only stand-in fields: the site then shows the products saved in the CMS, and you can't pick new ones.",
+      details: { missing },
     });
   }
+  ctx.titleToUid = titleToUid;
+  buildSchemas(ctx); // surfaces a snapshot that names an unknown extension (exit 1) before any write
 
   // Conflicts: fixed-UID objects in the stack that the kit didn't create.
   const ours = (kind, key, phase) => state.created[kind].includes(key) || (state.pending?.key === key && state.pending?.phase === phase);
