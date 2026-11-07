@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import ContentstackServer from "@/lib/cstack";
 import { PLP_REFERENCES } from "@/lib/plpReferences";
 import { slimLinkedPages } from "@/lib/slimReferences";
-import RPCommerce from "@/lib/rpcommerce";
+import RPCommerce, { commerceConfigured } from "@/lib/rpcommerce";
+import { cmsCatalogProducts } from "@/lib/pdpOverlay";
 import DataContextProvider from "@/context/data.context";
 
 const FETCH_OPTIONS = { next: { revalidate: 300 } };
@@ -30,6 +31,31 @@ const resolveCommerce = cache(async (locale, slugSegments) => {
   return { category, products: products ?? [], filters };
 });
 
+// Without the store, every PLP (with or without a CMS entry, since the nav links to store
+// categories) lists the products that have a pdp entry in the CMS.
+const resolveCmsCatalog = cache(async (locale) => {
+  try {
+    return { category: null, products: cmsCatalogProducts(await ContentstackServer.getElementByType("pdp", locale)), filters: null };
+  } catch (error) {
+    console.error("Failed to fetch pdp entries for the CMS catalog", error);
+    return { category: null, products: [], filters: null };
+  }
+});
+
+// "city-bikes" → "City Bikes": the heading of a CMS-catalog PLP, which has no store category.
+function titleFromSlug(slugSegments) {
+  return String(slugSegments[slugSegments.length - 1] ?? "")
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+// The store's category, or the CMS catalog under a heading taken from the url when the store isn't set up.
+async function resolveListing(locale, slugSegments) {
+  if (commerceConfigured) return resolveCommerce(locale, slugSegments);
+  return { ...(await resolveCmsCatalog(locale)), category: { name: titleFromSlug(slugSegments) } };
+}
+
 const fetchPlpEntry = cache(async (locale, slugSegments) => {
   const headersList = await headers();
   const variantParam = headersList.get("x-personalize-variants");
@@ -44,7 +70,7 @@ const fetchPlpEntry = cache(async (locale, slugSegments) => {
 
 export async function generateMetadata({ params }) {
   const { locale, slug } = await params;
-  const [entryData, commerce] = await Promise.all([fetchPlpEntry(locale, slug), resolveCommerce(locale, slug)]);
+  const [entryData, commerce] = await Promise.all([fetchPlpEntry(locale, slug), resolveListing(locale, slug)]);
   const entry = entryData?.[0];
   const category = commerce?.category;
 
@@ -69,7 +95,7 @@ export async function generateMetadata({ params }) {
 
 export default async function PLPLayout({ children, params }) {
   const { locale, slug } = await params;
-  const [entryData, commerce] = await Promise.all([fetchPlpEntry(locale, slug), resolveCommerce(locale, slug)]);
+  const [entryData, commerce] = await Promise.all([fetchPlpEntry(locale, slug), resolveListing(locale, slug)]);
 
   if (!commerce) {
     notFound();

@@ -72,6 +72,26 @@ describe("doctor", () => {
     expect(r.fix).toContain("Contentstack → Marketplace → Apps → install RP Commerce in this stack (ask the app owner for access)");
   });
 
+  it("warns, without failing, when no store settings are set: the site uses the CMS snapshots", async () => {
+    for (const k of ["RED_PANDA_COMMERCE_API_URL", "RED_PANDA_COMMERCE_STPRE_ID", "RED_PANDA_COMMERCE_STPRE_TOKEN"]) vi.stubEnv(k, "");
+    const { fetchImpl, calls } = fakeFetch();
+    const results = await runChecks({ phase: "commerce", creds: testCreds(), fetchImpl, nodeVersion: "22.0.0" });
+    expect(results.filter((r) => !r.ok)).toEqual([]);
+    const r = byName(results, "commerce-store");
+    expect(r.warn).toBe(true);
+    expect(r.detail).toContain("CMS");
+    expect(calls.some((c) => c.url.includes("/api/public/store/"))).toBe(false);
+  });
+
+  it("fails commerce-store when only some store settings are set", async () => {
+    vi.stubEnv("RED_PANDA_COMMERCE_STPRE_TOKEN", "");
+    const { fetchImpl } = fakeFetch();
+    const results = await runChecks({ phase: "commerce", creds: testCreds(), fetchImpl, nodeVersion: "22.0.0" });
+    const r = byName(results, "commerce-store");
+    expect(r.ok).toBe(false);
+    expect(r.detail).toContain("RED_PANDA_COMMERCE_STPRE_TOKEN");
+  });
+
   it("fails node below 20.6", async () => {
     const { fetchImpl } = fakeFetch();
     const results = await runChecks({ creds: testCreds(), fetchImpl, nodeVersion: "20.5.1" });

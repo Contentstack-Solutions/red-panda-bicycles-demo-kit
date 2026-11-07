@@ -33,7 +33,7 @@ Then open Claude Code in that folder and say "set up the Red Panda demo kit".
 - **A GitHub account.** Launch deploys from your own GitHub copy of this repo, so you make one first.
 - **A Contentstack organization** with Personalize, Launch, Brand Kit and the Profile Hub app.
 - **An empty stack whose master language is English (`en`).** The master language can't be changed later. You create it during setup.
-- **Access to the RP Commerce marketplace app and its store.** Arrange this with the app's owner before you start.
+- **The RP Commerce marketplace app, installed in your stack.** The content types use its product fields, so the import needs it. Arrange access with the app's owner before you start. Connecting its store is optional: without it the site shows the products saved in the CMS.
 - **A Lytics account**, ideally a dedicated sandbox. Lytics profiles and events can't be deleted through the API, so tear-down can't remove them.
 
 Your keys live in `.env.local`, which is git-ignored. Never commit it, and never paste its contents into the chat.
@@ -69,7 +69,7 @@ Every step in a browser that the scripts can't do is in [docs/manual-steps.md](d
 |---|---|---|---|
 | 0 | Prereqs | Install dependencies | `npm ci` |
 | 1 | Keys | Create the stack and tokens, fill `.env.local`, check it | `npm run kit:doctor -- --phase keys` |
-| 2 | Commerce | Install RP Commerce, check it | `npm run kit:doctor -- --phase commerce` |
+| 2 | Commerce | Install RP Commerce (connecting the store is optional), check it | `npm run kit:doctor -- --phase commerce` |
 | 3 | Contentstack | Import content types, entries, assets and locales | `npm run kit:import` |
 | 4 | Lytics | Seed customers, events, audiences and models | `npm run kit:lytics` |
 | 5 | Personalize | Create the homepage experience and its variant | `npm run kit:personalize` |

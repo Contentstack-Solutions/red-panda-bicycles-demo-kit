@@ -38,10 +38,10 @@ Never use it for a token (`CONTENTSTACK_MANAGEMENT_TOKEN`, `CONTENTSTACK_DELIVER
 
 ## 2. Commerce
 
-- **Manual:** §4 (install RP Commerce; the store ID, store token and API URL go in `.env.local`; the store token is a secret, so the SE pastes it).
+- **Manual:** §4 (install RP Commerce). Connecting the store is optional: if the SE has the store ID, store token and API URL, they go in `.env.local` (the store token is a secret, so the SE pastes it). Without them the site shows the products saved in the CMS and the cart stays empty; don't hold up setup for them.
 - **Check:** `npm run kit:doctor -- --phase commerce`
 - **Command:** none.
-- **Success:** doctor exits 0 (`commerce-app` finds the extensions `RP Commerce Products` and `RP Commerce Category`; `commerce-store` reaches the store). No state key.
+- **Success:** doctor exits 0 (`commerce-app` finds the extensions `RP Commerce Products` and `RP Commerce Category`; `commerce-store` reaches the store, or warns that no store settings are set, which is fine). No state key.
 - **Failure:** missing extension titles mean the app isn't installed in this stack, or is a different version. Getting access is the SE's job (ask the app owner). The import checks again and stops before writing anything.
 
 ## 3. Contentstack

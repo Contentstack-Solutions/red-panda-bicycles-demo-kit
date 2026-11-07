@@ -21,13 +21,18 @@ const CORE_ENV = [
 export const PHASE_ENV = {
   keys: CORE_ENV,
   contentstack: CORE_ENV,
-  commerce: ["RED_PANDA_COMMERCE_API_URL", "RED_PANDA_COMMERCE_STPRE_ID", "RED_PANDA_COMMERCE_STPRE_TOKEN"],
+  // The store settings are optional (see COMMERCE_STORE_ENV); the commerce-store check handles them.
+  commerce: [],
   lytics: ["LYTICS_ACCESS_TOKEN", "LYTICS_TAG"],
   // The Contentstack authtoken isn't an env var: rp.mjs login stores it (keychain or ~/.red-panda/credentials.env).
   personalize: ["CONTENTSTACK_PERSONALIZE_PROJECT_UID"],
   brandkit: ["BRAND_KIT_UID", "CONTENTSTACK_ORGANIZATION_UID"],
   site: CORE_ENV,
 };
+
+// RP Commerce store settings. Optional: without them the site shows products from the commerce
+// snapshots stored in the CMS pdp entries. Set all three or none.
+export const COMMERCE_STORE_ENV = ["RED_PANDA_COMMERCE_API_URL", "RED_PANDA_COMMERCE_STPRE_ID", "RED_PANDA_COMMERCE_STPRE_TOKEN"];
 
 // Which checks each phase needs, in run order. Later tasks and the setup skill rely on this.
 export const PHASE_CHECKS = {
@@ -143,7 +148,14 @@ const CHECKS = {
   },
 
   "commerce-store": async (ctx) => {
-    const bad = needs("commerce-store", PHASE_ENV.commerce);
+    if (COMMERCE_STORE_ENV.every((name) => !process.env[name]?.trim())) {
+      return warn(
+        "commerce-store",
+        "not set: the site shows products from the CMS (the snapshots stored in the pdp entries)",
+        "Optional. For live products and the cart, ask the RP Commerce app owner for these three values and set them in .env.local.",
+      );
+    }
+    const bad = needs("commerce-store", COMMERCE_STORE_ENV);
     if (bad) return bad;
     const url = `${process.env.RED_PANDA_COMMERCE_API_URL}/api/public/store/${process.env.RED_PANDA_COMMERCE_STPRE_ID}/categories/categoryByUrl?url=/e-bikes`;
     const token = process.env.RED_PANDA_COMMERCE_STPRE_TOKEN;

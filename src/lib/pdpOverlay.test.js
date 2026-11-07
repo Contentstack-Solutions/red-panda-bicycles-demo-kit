@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyOverlay, recommendedAccessories } from "./pdpOverlay";
+import { applyOverlay, cmsCatalogProducts, recommendedAccessories, snapshotProduct } from "./pdpOverlay";
 
 const commerceProduct = { id: "p1", name: "Roam", price: 2499 };
 
@@ -44,5 +44,40 @@ describe("recommendedAccessories", () => {
   it("returns nothing without an overlay or the field", () => {
     expect(recommendedAccessories(null)).toEqual([]);
     expect(recommendedAccessories({})).toEqual([]);
+  });
+});
+
+describe("snapshotProduct", () => {
+  it("returns the commerce product cached in the entry's product field", () => {
+    const snap = { id: "c1", name: "Volt Trail E-MTB", url: "volt-trail-e-mtb", price: 4999 };
+    expect(snapshotProduct({ product: { items: [snap] } })).toBe(snap);
+  });
+
+  it("returns null when there's no overlay or no cached product", () => {
+    expect(snapshotProduct(null)).toBeNull();
+    expect(snapshotProduct({})).toBeNull();
+    expect(snapshotProduct({ product: { items: [] } })).toBeNull();
+  });
+});
+
+describe("cmsCatalogProducts", () => {
+  const entries = [
+    { url: "/pdp/roam-e-bike", product_name: "RP Roam", product: { items: [{ id: "c1", name: "Volt Trail E-MTB", url: "volt-trail-e-mtb", price: 4999 }] } },
+    { url: "/pdp/the-jordaan", product: { items: [{ id: "c2", name: "The Jordaan", url: "the-jordaan", price: 499 }] } },
+    { url: "/pdp/no-snapshot", product_name: "Orphan" },
+  ];
+
+  it("builds grid products from pdp entries, CMS fields over the cached snapshot", () => {
+    const products = cmsCatalogProducts(entries);
+    expect(products.map((p) => p.name)).toEqual(["RP Roam", "The Jordaan"]);
+    expect(products[0].price).toBe(4999);
+  });
+
+  it("links each product to its pdp entry's url, not the commerce slug", () => {
+    expect(cmsCatalogProducts(entries).map((p) => p.url)).toEqual(["roam-e-bike", "the-jordaan"]);
+  });
+
+  it("returns an empty list for no entries", () => {
+    expect(cmsCatalogProducts(null)).toEqual([]);
   });
 });

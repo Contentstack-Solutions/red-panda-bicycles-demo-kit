@@ -34,12 +34,12 @@ The seeder needs to know the site's address before it runs. Choose the Launch pr
 
 ## 4. Install the RP Commerce app
 
-The shop pages read products from the RP Commerce app. Getting access is your responsibility: ask the app owner for access.
+The content types use the app's two product fields, so the import needs the app installed. Getting access is your responsibility: ask the app owner for access.
 
 1. Contentstack → **Marketplace → Apps** → install **RP Commerce** in your stack.
-2. Open the app's configuration screen and copy the store ID, store token and API URL into `RED_PANDA_COMMERCE_STPRE_ID`, `RED_PANDA_COMMERCE_STPRE_TOKEN` and `RED_PANDA_COMMERCE_API_URL`. (The `STPRE` spelling is correct; it is the name the code reads.)
+2. **Optional:** connect the live store. Open the app's configuration screen and copy the store ID, store token and API URL into `RED_PANDA_COMMERCE_STPRE_ID`, `RED_PANDA_COMMERCE_STPRE_TOKEN` and `RED_PANDA_COMMERCE_API_URL`. (The `STPRE` spelling is correct; it is the name the code reads.) Set all three or none. Without them the site still works: product and category pages show the products saved in the CMS, and the cart stays empty.
 
-Check: `npm run kit:doctor -- --phase commerce`. It lists any missing extension titles (`RP Commerce Products`, `RP Commerce Category`). The import checks too, and stops before writing anything.
+Check: `npm run kit:doctor -- --phase commerce`. It lists any missing extension titles (`RP Commerce Products`, `RP Commerce Category`); the import checks too, and stops before writing anything. With no store settings it warns but passes.
 
 ## 5. Install Developer Tools and Audience Insights (optional)
 

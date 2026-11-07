@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import RPCommerce from "@/lib/rpcommerce";
 import ContentstackServer from "@/lib/cstack";
-import { applyOverlay } from "@/lib/pdpOverlay";
+import { applyOverlay, snapshotProduct } from "@/lib/pdpOverlay";
 import PDPView from "@/components/PDPView";
 
 const FETCH_OPTIONS = { next: { revalidate: 300 } };
@@ -31,7 +31,8 @@ const resolveProduct = cache(async (locale, slug) => {
 
   const commerceSlug = overlay ? overlay.product?.items?.[0]?.url : slug;
   const products = commerceSlug ? await RPCommerce.getProductByUrl(commerceSlug, locale, FETCH_OPTIONS) : null;
-  const commerceProduct = products?.[0] ?? null;
+  // Without the store (or when it doesn't return the product), use the snapshot cached in the entry.
+  const commerceProduct = products?.[0] ?? snapshotProduct(overlay);
 
   if (!overlay && !commerceProduct) return null;
 

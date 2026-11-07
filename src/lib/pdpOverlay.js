@@ -56,3 +56,21 @@ export function recommendedAccessories(overlay) {
     .map((group, index) => ({ product: group?.product_item?.items?.[0], index }))
     .filter(({ product }) => Boolean(product?.url));
 }
+
+// The commerce product cached in the entry's `product` field when it was picked (id, name,
+// image, media, url, description, price, currency). Used when the store isn't set up or
+// doesn't return the product, so the PDP still renders from the CMS alone.
+export function snapshotProduct(overlay) {
+  return overlay?.product?.items?.[0] ?? null;
+}
+
+// Grid products built from `pdp` entries, for PLPs when the store isn't set up: each entry's
+// cached snapshot with its CMS overlay applied, linked to the entry's own PDP url.
+export function cmsCatalogProducts(entries) {
+  return (entries ?? [])
+    .filter((entry) => snapshotProduct(entry))
+    .map((entry) => ({
+      ...applyOverlay(snapshotProduct(entry), entry),
+      url: String(entry.url ?? "").replace(/^\/pdp\//, ""),
+    }));
+}

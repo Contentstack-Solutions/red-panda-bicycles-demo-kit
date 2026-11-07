@@ -10,7 +10,7 @@ These steps have no usable API with a management token, which is why a person do
 | 1 Keys | §2 Create the tokens | Delivery, preview and management (write) tokens; `CONTENTSTACK_ENVIRONMENT` | "done" (tokens go straight into `.env.local`) | `npm run kit:doctor -- --phase keys` |
 | 1 Keys | §3 Pick the Launch project name now | Sets `SITE_URL` to the Launch address before seeding | the project name or domain | the setter in `references/phases.md` |
 | 1 Keys | §7 Lytics API token and account ID | Admin token, `LYTICS_TAG`, `DEMO_PERSONA_EMAIL` | the account ID and persona email (not the token) | `npm run kit:doctor -- --phase keys` (Lytics is checked in phase 4) |
-| 2 Commerce | §4 Install the RP Commerce app | App install; store ID, store token, API URL | "done" | `npm run kit:doctor -- --phase commerce` |
+| 2 Commerce | §4 Install the RP Commerce app | App install; optionally the store ID, store token and API URL | "done" | `npm run kit:doctor -- --phase commerce` |
 | 3 Contentstack | §5 Developer Tools and Audience Insights | Optional marketplace apps | "done" or "skip" | none |
 | 3 Contentstack | §6 Enable Live Preview | Settings → Live Preview, environment `preview`, the preview token | "done" | none |
 | 5 Personalize | §8 Personalize project, connected to Lytics | Project, Lytics integration, project UID, edge URL | the project UID and region | `npm run kit:doctor -- --phase personalize` |
